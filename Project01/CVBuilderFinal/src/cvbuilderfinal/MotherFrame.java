@@ -5,11 +5,13 @@
  */
 package cvbuilderfinal;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author NHBSOHEL
  */
-public class MotherFrame extends javax.swing.JFrame {
+public class MotherFrame extends Variables {
 
     /**
      * Creates new form MotherFrame
@@ -29,6 +31,15 @@ public class MotherFrame extends javax.swing.JFrame {
 
         personalInfoButton = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
+        panelBasic = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        addressField = new javax.swing.JTextField(address);
+        emailfield = new javax.swing.JTextField(email);
+        phonefield = new javax.swing.JTextField(phone);
+        jLabel8 = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField(name);
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,16 +50,47 @@ public class MotherFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
-        mainPanel.setLayout(mainPanelLayout);
-        mainPanelLayout.setHorizontalGroup(
-            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 563, Short.MAX_VALUE)
-        );
-        mainPanelLayout.setVerticalGroup(
-            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
-        );
+        mainPanel.setLayout(new java.awt.CardLayout());
+
+        panelBasic.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel4.setText("Address:");
+        panelBasic.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 110, 40));
+
+        jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel5.setText("Email Address:");
+        panelBasic.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 110, 40));
+
+        addressField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addressFieldActionPerformed(evt);
+            }
+        });
+        panelBasic.add(addressField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 200, 30));
+        panelBasic.add(emailfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 200, 30));
+
+        phonefield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phonefieldActionPerformed(evt);
+            }
+        });
+        panelBasic.add(phonefield, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 200, 30));
+
+        jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel8.setText("Phone Number:");
+        panelBasic.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 130, 40));
+
+        nameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameFieldActionPerformed(evt);
+            }
+        });
+        panelBasic.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 200, 30));
+
+        jLabel12.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel12.setText("Full Name:");
+        panelBasic.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,8 +98,10 @@ public class MotherFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(personalInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                .addGap(67, 67, 67)
+                .addComponent(personalInfoButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelBasic, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
@@ -65,10 +109,12 @@ public class MotherFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(personalInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                    .addComponent(personalInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelBasic, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,6 +125,18 @@ public class MotherFrame extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "panelBasic");
     }//GEN-LAST:event_personalInfoButtonActionPerformed
+
+    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressFieldActionPerformed
+
+    private void phonefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonefieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phonefieldActionPerformed
+
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,7 +174,16 @@ public class MotherFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField addressField;
+    private javax.swing.JTextField emailfield;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JPanel panelBasic;
     private javax.swing.JButton personalInfoButton;
+    private javax.swing.JTextField phonefield;
     // End of variables declaration//GEN-END:variables
 }
