@@ -41,6 +41,18 @@ public class MotherFrame extends Variables {
         jLabel8 = new javax.swing.JLabel();
         nameField = new javax.swing.JTextField(name);
         jLabel12 = new javax.swing.JLabel();
+        panelBiography = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        fatherNamefield = new javax.swing.JTextField(father);
+        jLabel2 = new javax.swing.JLabel();
+        motherNamefield = new javax.swing.JTextField(mother);
+        jLabel7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        religionfield = new javax.swing.JTextField(religion);
+        nationalityfield = new javax.swing.JTextField(nationality);
+        jLabel13 = new javax.swing.JLabel();
+        bloodgfield = new javax.swing.JTextField(bloodg);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,6 +114,44 @@ public class MotherFrame extends Variables {
 
         mainPanel.add(panelBasic, "panelBasic");
 
+        panelBiography.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        panelBiography.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 30));
+        panelBiography.add(fatherNamefield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 270, 30));
+
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel2.setText("Father's Name:");
+        panelBiography.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 30));
+        panelBiography.add(motherNamefield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 270, 30));
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel7.setText("Mothers's Name:");
+        panelBiography.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 30));
+
+        jLabel10.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel10.setText("Religion:");
+        panelBiography.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 30));
+
+        jLabel11.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel11.setText("Nationality:");
+        panelBiography.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, 30));
+        panelBiography.add(religionfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 270, 30));
+        panelBiography.add(nationalityfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 270, 30));
+
+        jLabel13.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel13.setText("Blood Group:");
+        panelBiography.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, 30));
+
+        bloodgfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bloodgfieldActionPerformed(evt);
+            }
+        });
+        panelBiography.add(bloodgfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 270, 30));
+
+        mainPanel.add(panelBiography, "panelUnivInfo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,6 +207,10 @@ public class MotherFrame extends Variables {
         card.show(mainPanel, "panelUnivInfo");
     }//GEN-LAST:event_biographyInfoButtonActionPerformed
 
+    private void bloodgfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodgfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bloodgfieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -195,15 +249,27 @@ public class MotherFrame extends Variables {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addressField;
     private javax.swing.JButton biographyInfoButton;
+    private javax.swing.JTextField bloodgfield;
     private javax.swing.JTextField emailfield;
+    private javax.swing.JTextField fatherNamefield;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JTextField motherNamefield;
     private javax.swing.JTextField nameField;
+    private javax.swing.JTextField nationalityfield;
     private javax.swing.JPanel panelBasic;
+    private javax.swing.JPanel panelBiography;
     private javax.swing.JButton personalInfoButton;
     private javax.swing.JTextField phonefield;
+    private javax.swing.JTextField religionfield;
     // End of variables declaration//GEN-END:variables
 }
