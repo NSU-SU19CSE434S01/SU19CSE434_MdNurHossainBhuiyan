@@ -6,6 +6,7 @@
 package cvbuilderfinal;
 
 import java.awt.CardLayout;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -54,6 +55,9 @@ public class MotherFrame extends Variables {
         nationalityfield = new javax.swing.JTextField(nationality);
         jLabel13 = new javax.swing.JLabel();
         bloodgfield = new javax.swing.JTextField(bloodg);
+        panelImage = new javax.swing.JPanel();
+        imageupbtn = new javax.swing.JButton();
+        imageup = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -160,35 +164,64 @@ public class MotherFrame extends Variables {
 
         mainPanel.add(panelBiography, "panelUnivInfo");
 
+        panelImage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        imageupbtn.setText("Upload Image");
+        imageupbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imageupbtnActionPerformed(evt);
+            }
+        });
+        panelImage.add(imageupbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 110, 40));
+
+        mainPanel.add(panelImage, "panelImage");
+
+        try {
+            imageup.setIcon(new javax.swing.ImageIcon(ImageProcess.toBufferedImage()));
+        }
+
+        catch(Exception x) {
+
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(personalInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                    .addComponent(biographyInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pictureButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(609, 609, 609)
-                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(personalInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                            .addComponent(biographyInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pictureButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addGap(111, 111, 111)
+                        .addComponent(imageup, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(215, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(personalInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(biographyInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(pictureButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(personalInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(biographyInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(pictureButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(256, 256, 256))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(imageup, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -227,6 +260,26 @@ public class MotherFrame extends Variables {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "panelImage");
     }//GEN-LAST:event_pictureButtonActionPerformed
+
+    private void imageupbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imageupbtnActionPerformed
+        // TODO add your handling code here:
+        JFileChooser choose = new JFileChooser();
+
+        choose.showOpenDialog(null);
+
+        String path = choose.getSelectedFile().getPath();
+        String filename=choose.getSelectedFile().getName();
+        imgExtension = filename.substring(filename.lastIndexOf("."),filename.length());
+        imgExtension = imgExtension.replace(".", "");
+
+        try {
+            imgString = ImageProcess.toImageString(path);
+        } catch (IOException ex) {
+            Logger.getLogger(MotherFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //    System.out.println(path);
+        imageup.setIcon(new javax.swing.ImageIcon(path));
+    }//GEN-LAST:event_imageupbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,6 +322,8 @@ public class MotherFrame extends Variables {
     private javax.swing.JTextField bloodgfield;
     private javax.swing.JTextField emailfield;
     private javax.swing.JTextField fatherNamefield;
+    private javax.swing.JLabel imageup;
+    private javax.swing.JButton imageupbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -285,6 +340,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JTextField nationalityfield;
     private javax.swing.JPanel panelBasic;
     private javax.swing.JPanel panelBiography;
+    private javax.swing.JPanel panelImage;
     private javax.swing.JButton personalInfoButton;
     private javax.swing.JTextField phonefield;
     private javax.swing.JButton pictureButton;
