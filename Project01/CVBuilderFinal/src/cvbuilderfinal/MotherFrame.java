@@ -59,6 +59,8 @@ public class MotherFrame extends Variables {
         panelImage = new javax.swing.JPanel();
         imageupbtn = new javax.swing.JButton();
         imageup = new javax.swing.JLabel();
+        panelExperiences = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -192,6 +194,26 @@ public class MotherFrame extends Variables {
         panelImage.add(imageup, new org.netbeans.lib.awtextra.AbsoluteConstraints(-220, -170, 670, 470));
 
         mainPanel.add(panelImage, "panelImage");
+
+        panelExperiences.setLayout(new java.awt.BorderLayout());
+        final JFXPanel bioPanel = new JFXPanel();
+
+        panelExperiences.add(bioPanel);
+        // Code of sub-components and layout - not shown here
+        Platform.runLater(() -> {
+            bioInfo = new HTMLEditor();
+            Scene bioScene = new Scene(bioInfo);
+            bioInfo.setPrefHeight(245);
+            bioInfo.setPrefWidth(245);
+            bioInfo.setHtmlText(experience);
+            bioPanel.setScene(bioScene);
+        });
+
+        jLabel22.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel22.setText("Experiences:");
+        panelExperiences.add(jLabel22, java.awt.BorderLayout.PAGE_START);
+
+        mainPanel.add(panelExperiences, "panelBiography");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -337,6 +359,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -347,6 +370,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JTextField nationalityfield;
     private javax.swing.JPanel panelBasic;
     private javax.swing.JPanel panelBiography;
+    private javax.swing.JPanel panelExperiences;
     private javax.swing.JPanel panelImage;
     private javax.swing.JButton personalInfoButton;
     private javax.swing.JTextField phonefield;
