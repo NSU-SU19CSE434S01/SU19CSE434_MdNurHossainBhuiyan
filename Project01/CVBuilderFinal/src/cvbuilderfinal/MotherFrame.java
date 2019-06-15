@@ -29,6 +29,7 @@ public class MotherFrame extends Variables {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pictureButton = new javax.swing.JButton();
         biographyInfoButton = new javax.swing.JButton();
         personalInfoButton = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
@@ -55,6 +56,13 @@ public class MotherFrame extends Variables {
         bloodgfield = new javax.swing.JTextField(bloodg);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pictureButton.setText("PICTURE");
+        pictureButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pictureButtonActionPerformed(evt);
+            }
+        });
 
         biographyInfoButton.setText("BIOGRAPHY");
         biographyInfoButton.addActionListener(new java.awt.event.ActionListener() {
@@ -162,10 +170,11 @@ public class MotherFrame extends Variables {
                         .addGap(609, 609, 609)
                         .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
+                        .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(personalInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                            .addComponent(biographyInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(biographyInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pictureButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -175,7 +184,9 @@ public class MotherFrame extends Variables {
                 .addComponent(personalInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(biographyInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addGap(31, 31, 31)
+                .addComponent(pictureButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(57, Short.MAX_VALUE))
         );
@@ -210,6 +221,12 @@ public class MotherFrame extends Variables {
     private void bloodgfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodgfieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bloodgfieldActionPerformed
+
+    private void pictureButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pictureButtonActionPerformed
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "panelImage");
+    }//GEN-LAST:event_pictureButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,6 +287,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JPanel panelBiography;
     private javax.swing.JButton personalInfoButton;
     private javax.swing.JTextField phonefield;
+    private javax.swing.JButton pictureButton;
     private javax.swing.JTextField religionfield;
     // End of variables declaration//GEN-END:variables
 }
