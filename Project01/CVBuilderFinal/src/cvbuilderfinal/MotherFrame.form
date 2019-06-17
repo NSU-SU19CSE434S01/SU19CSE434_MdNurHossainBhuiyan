@@ -32,6 +32,7 @@
                   <Component id="experiencesButton" alignment="1" max="32767" attributes="0"/>
                   <Component id="eduInfoButton" alignment="1" max="32767" attributes="0"/>
                   <Component id="skillsButton" alignment="1" max="32767" attributes="0"/>
+                  <Component id="achievementsButton" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="546" max="32767" attributes="0"/>
               <Component id="mainPanel" min="-2" pref="308" max="-2" attributes="0"/>
@@ -54,7 +55,9 @@
               <Component id="eduInfoButton" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="skillsButton" min="-2" pref="42" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="achievementsButton" min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Component id="mainPanel" min="-2" pref="229" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -92,6 +95,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="biographyInfoButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="achievementsButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ACHIEVEMENTS"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="achievementsButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="eduInfoButton">

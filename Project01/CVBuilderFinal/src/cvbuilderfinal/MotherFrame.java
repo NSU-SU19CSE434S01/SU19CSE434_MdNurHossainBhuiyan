@@ -34,6 +34,7 @@ public class MotherFrame extends Variables {
         experiencesButton = new javax.swing.JButton();
         pictureButton = new javax.swing.JButton();
         biographyInfoButton = new javax.swing.JButton();
+        achievementsButton = new javax.swing.JButton();
         eduInfoButton = new javax.swing.JButton();
         personalInfoButton = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
@@ -91,6 +92,13 @@ public class MotherFrame extends Variables {
         biographyInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 biographyInfoButtonActionPerformed(evt);
+            }
+        });
+
+        achievementsButton.setText("ACHIEVEMENTS");
+        achievementsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                achievementsButtonActionPerformed(evt);
             }
         });
 
@@ -243,7 +251,8 @@ public class MotherFrame extends Variables {
                     .addComponent(pictureButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(experiencesButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(eduInfoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(skillsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(skillsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(achievementsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
@@ -263,7 +272,9 @@ public class MotherFrame extends Variables {
                 .addComponent(eduInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(skillsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addGap(31, 31, 31)
+                .addComponent(achievementsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -343,6 +354,12 @@ public class MotherFrame extends Variables {
         card.show(mainPanel, "panelProfInfo");
     }//GEN-LAST:event_skillsButtonActionPerformed
 
+    private void achievementsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_achievementsButtonActionPerformed
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "panelAwards");
+    }//GEN-LAST:event_achievementsButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -379,6 +396,7 @@ public class MotherFrame extends Variables {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton achievementsButton;
     private javax.swing.JTextField addressField;
     private javax.swing.JButton biographyInfoButton;
     private javax.swing.JTextField bloodgfield;
