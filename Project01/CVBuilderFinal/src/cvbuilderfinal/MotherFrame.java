@@ -33,6 +33,7 @@ public class MotherFrame extends Variables {
         experiencesButton = new javax.swing.JButton();
         pictureButton = new javax.swing.JButton();
         biographyInfoButton = new javax.swing.JButton();
+        eduInfoButton = new javax.swing.JButton();
         personalInfoButton = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
         panelBasic = new javax.swing.JPanel();
@@ -82,6 +83,13 @@ public class MotherFrame extends Variables {
         biographyInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 biographyInfoButtonActionPerformed(evt);
+            }
+        });
+
+        eduInfoButton.setText("EDUCATIONAL INFORMATION");
+        eduInfoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eduInfoButtonActionPerformed(evt);
             }
         });
 
@@ -220,15 +228,16 @@ public class MotherFrame extends Variables {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(personalInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                    .addComponent(personalInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(biographyInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pictureButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(experiencesButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 549, Short.MAX_VALUE)
+                    .addComponent(experiencesButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(eduInfoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,7 +250,9 @@ public class MotherFrame extends Variables {
                 .addComponent(pictureButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(experiencesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(185, 185, 185)
+                .addGap(18, 18, 18)
+                .addComponent(eduInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(124, 124, 124)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -309,6 +320,12 @@ public class MotherFrame extends Variables {
         card.show(mainPanel, "panelBiography");
     }//GEN-LAST:event_experiencesButtonActionPerformed
 
+    private void eduInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eduInfoButtonActionPerformed
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "panelEduInfo");
+    }//GEN-LAST:event_eduInfoButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -348,6 +365,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JTextField addressField;
     private javax.swing.JButton biographyInfoButton;
     private javax.swing.JTextField bloodgfield;
+    private javax.swing.JButton eduInfoButton;
     private javax.swing.JTextField emailfield;
     private javax.swing.JButton experiencesButton;
     private javax.swing.JTextField fatherNamefield;

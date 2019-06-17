@@ -24,16 +24,17 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="personalInfoButton" pref="167" max="32767" attributes="0"/>
+                  <Component id="personalInfoButton" max="32767" attributes="0"/>
                   <Component id="biographyInfoButton" max="32767" attributes="0"/>
                   <Component id="pictureButton" alignment="1" max="32767" attributes="0"/>
                   <Component id="experiencesButton" alignment="1" max="32767" attributes="0"/>
+                  <Component id="eduInfoButton" alignment="1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="549" max="32767" attributes="0"/>
+              <EmptySpace pref="546" max="32767" attributes="0"/>
               <Component id="mainPanel" min="-2" pref="308" max="-2" attributes="0"/>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -48,7 +49,9 @@
               <Component id="pictureButton" min="-2" pref="41" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="experiencesButton" min="-2" pref="40" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="eduInfoButton" min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
               <Component id="mainPanel" min="-2" pref="229" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -78,6 +81,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="biographyInfoButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="eduInfoButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EDUCATIONAL INFORMATION"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eduInfoButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="personalInfoButton">
