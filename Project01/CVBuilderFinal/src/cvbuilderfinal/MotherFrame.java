@@ -30,6 +30,7 @@ public class MotherFrame extends Variables {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        skillsButton = new javax.swing.JButton();
         experiencesButton = new javax.swing.JButton();
         pictureButton = new javax.swing.JButton();
         biographyInfoButton = new javax.swing.JButton();
@@ -64,6 +65,13 @@ public class MotherFrame extends Variables {
         jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        skillsButton.setText("SKILLS");
+        skillsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                skillsButtonActionPerformed(evt);
+            }
+        });
 
         experiencesButton.setText("EXPERIENCES");
         experiencesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -234,7 +242,8 @@ public class MotherFrame extends Variables {
                     .addComponent(biographyInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pictureButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(experiencesButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(eduInfoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(eduInfoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(skillsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
@@ -252,7 +261,9 @@ public class MotherFrame extends Variables {
                 .addComponent(experiencesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(eduInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(skillsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -326,6 +337,12 @@ public class MotherFrame extends Variables {
         card.show(mainPanel, "panelEduInfo");
     }//GEN-LAST:event_eduInfoButtonActionPerformed
 
+    private void skillsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skillsButtonActionPerformed
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "panelProfInfo");
+    }//GEN-LAST:event_skillsButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -394,5 +411,6 @@ public class MotherFrame extends Variables {
     private javax.swing.JTextField phonefield;
     private javax.swing.JButton pictureButton;
     private javax.swing.JTextField religionfield;
+    private javax.swing.JButton skillsButton;
     // End of variables declaration//GEN-END:variables
 }
