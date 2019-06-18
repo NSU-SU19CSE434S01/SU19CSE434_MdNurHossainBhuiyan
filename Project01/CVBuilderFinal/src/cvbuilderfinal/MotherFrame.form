@@ -24,17 +24,31 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="personalInfoButton" max="32767" attributes="0"/>
-                  <Component id="biographyInfoButton" max="32767" attributes="0"/>
-                  <Component id="pictureButton" alignment="1" max="32767" attributes="0"/>
-                  <Component id="experiencesButton" alignment="1" max="32767" attributes="0"/>
-                  <Component id="eduInfoButton" alignment="1" max="32767" attributes="0"/>
-                  <Component id="skillsButton" alignment="1" max="32767" attributes="0"/>
-                  <Component id="achievementsButton" alignment="1" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="personalInfoButton" max="32767" attributes="0"/>
+                          <Component id="biographyInfoButton" max="32767" attributes="0"/>
+                          <Component id="pictureButton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="experiencesButton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="eduInfoButton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="skillsButton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="achievementsButton" alignment="1" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="First" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Previous" min="-2" pref="81" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="Next" min="-2" pref="63" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="Last" min="-2" pref="67" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="546" max="32767" attributes="0"/>
+              <EmptySpace pref="399" max="32767" attributes="0"/>
               <Component id="mainPanel" min="-2" pref="308" max="-2" attributes="0"/>
               <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
@@ -57,14 +71,60 @@
               <Component id="skillsButton" min="-2" pref="42" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="achievementsButton" min="-2" pref="36" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-              <Component id="mainPanel" min="-2" pref="229" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="mainPanel" min="-2" pref="229" max="-2" attributes="0"/>
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="First" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Previous" alignment="3" max="32767" attributes="0"/>
+                          <Component id="Next" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Last" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JButton" name="Last">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Last"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LastActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Previous">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Previous"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PreviousActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="First">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="First"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FirstActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Next">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Next"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NextActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JButton" name="skillsButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="SKILLS"/>
