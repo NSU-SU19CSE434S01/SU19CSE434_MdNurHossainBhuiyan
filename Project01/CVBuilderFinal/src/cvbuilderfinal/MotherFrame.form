@@ -507,6 +507,33 @@
             </Component>
           </SubComponents>
         </Container>
+        <Container class="javax.swing.JPanel" name="panelEduInfo">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="final JFXPanel eduPanel = new JFXPanel();&#xa;&#xa;panelEduInfo.add(eduPanel);&#xa;// Code of sub-components and layout - not shown here&#xa;Platform.runLater(() -&gt; {&#xa;            eduInfo = new HTMLEditor();&#xa;            Scene eduScene = new Scene(eduInfo);&#xa;            eduInfo.setPrefHeight(245);&#xa;            eduInfo.setPrefWidth(245);&#xa;            eduInfo.setHtmlText(education);&#xa;            eduPanel.setScene(eduScene);&#xa;        });"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="panelEduInfo"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel23">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="20" style="3"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Educational Information"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="First"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

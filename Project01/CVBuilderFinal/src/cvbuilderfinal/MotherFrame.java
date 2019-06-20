@@ -68,6 +68,8 @@ public class MotherFrame extends Variables {
         imageup = new javax.swing.JLabel();
         panelExperiences = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
+        panelEduInfo = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -270,6 +272,26 @@ public class MotherFrame extends Variables {
         panelExperiences.add(jLabel22, java.awt.BorderLayout.PAGE_START);
 
         mainPanel.add(panelExperiences, "panelBiography");
+
+        panelEduInfo.setLayout(new java.awt.BorderLayout());
+        final JFXPanel eduPanel = new JFXPanel();
+
+        panelEduInfo.add(eduPanel);
+        // Code of sub-components and layout - not shown here
+        Platform.runLater(() -> {
+            eduInfo = new HTMLEditor();
+            Scene eduScene = new Scene(eduInfo);
+            eduInfo.setPrefHeight(245);
+            eduInfo.setPrefWidth(245);
+            eduInfo.setHtmlText(education);
+            eduPanel.setScene(eduScene);
+        });
+
+        jLabel23.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel23.setText("Educational Information");
+        panelEduInfo.add(jLabel23, java.awt.BorderLayout.PAGE_START);
+
+        mainPanel.add(panelEduInfo, "panelEduInfo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -494,6 +516,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -504,6 +527,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JTextField nationalityfield;
     private javax.swing.JPanel panelBasic;
     private javax.swing.JPanel panelBiography;
+    private javax.swing.JPanel panelEduInfo;
     private javax.swing.JPanel panelExperiences;
     private javax.swing.JPanel panelImage;
     private javax.swing.JButton personalInfoButton;
