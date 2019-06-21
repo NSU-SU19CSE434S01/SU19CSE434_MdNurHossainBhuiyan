@@ -72,6 +72,8 @@ public class MotherFrame extends Variables {
         jLabel23 = new javax.swing.JLabel();
         panelSkills = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
+        panelAchievements = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -314,6 +316,26 @@ public class MotherFrame extends Variables {
 
         mainPanel.add(panelSkills, "panelProfInfo");
 
+        panelAchievements.setLayout(new java.awt.BorderLayout());
+        final JFXPanel awardsPanel = new JFXPanel();
+
+        panelAchievements.add(awardsPanel);
+        // Code of sub-components and layout - not shown here
+        Platform.runLater(() -> {
+            awardsInfo = new HTMLEditor();
+            Scene awardsScene = new Scene(awardsInfo);
+            awardsInfo.setPrefHeight(245);
+            awardsInfo.setPrefWidth(245);
+            awardsInfo.setHtmlText(achievement);
+            awardsPanel.setScene(awardsScene);
+        });
+
+        jLabel24.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel24.setText("Achievements ( Keep Blank if None )");
+        panelAchievements.add(jLabel24, java.awt.BorderLayout.PAGE_START);
+
+        mainPanel.add(panelAchievements, "panelAwards");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -539,6 +561,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -547,6 +570,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JTextField motherNamefield;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField nationalityfield;
+    private javax.swing.JPanel panelAchievements;
     private javax.swing.JPanel panelBasic;
     private javax.swing.JPanel panelBiography;
     private javax.swing.JPanel panelEduInfo;

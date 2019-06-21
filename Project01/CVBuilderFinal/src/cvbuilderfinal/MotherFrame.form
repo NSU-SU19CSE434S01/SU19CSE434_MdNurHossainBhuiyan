@@ -563,6 +563,33 @@
             </Component>
           </SubComponents>
         </Container>
+        <Container class="javax.swing.JPanel" name="panelAchievements">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="final JFXPanel awardsPanel = new JFXPanel();&#xa;&#xa;panelAchievements.add(awardsPanel);&#xa;// Code of sub-components and layout - not shown here&#xa;Platform.runLater(() -&gt; {&#xa;            awardsInfo = new HTMLEditor();&#xa;            Scene awardsScene = new Scene(awardsInfo);&#xa;            awardsInfo.setPrefHeight(245);&#xa;            awardsInfo.setPrefWidth(245);&#xa;            awardsInfo.setHtmlText(achievement);&#xa;            awardsPanel.setScene(awardsScene);&#xa;        });"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="panelAwards"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel24">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="20" style="3"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Achievements ( Keep Blank if None )"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="First"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>
