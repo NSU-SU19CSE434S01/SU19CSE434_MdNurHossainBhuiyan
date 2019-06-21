@@ -70,6 +70,8 @@ public class MotherFrame extends Variables {
         jLabel22 = new javax.swing.JLabel();
         panelEduInfo = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
+        panelSkills = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -293,6 +295,25 @@ public class MotherFrame extends Variables {
 
         mainPanel.add(panelEduInfo, "panelEduInfo");
 
+        final JFXPanel profPanel = new JFXPanel();
+        panelSkills.setLayout(new java.awt.BorderLayout());
+        panelSkills.add(profPanel);
+
+        jLabel21.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel21.setText("Your Skills ( Keep Blank if None )");
+        panelSkills.add(jLabel21, java.awt.BorderLayout.PAGE_START);
+
+        Platform.runLater(() -> {
+            profInfo = new HTMLEditor();
+            Scene profScene = new Scene(profInfo);
+            profInfo.setPrefHeight(245);
+            profInfo.setPrefWidth(245);
+            profInfo.setHtmlText(skills);
+            profPanel.setScene(profScene);
+        });
+
+        mainPanel.add(panelSkills, "panelProfInfo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -515,6 +536,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel4;
@@ -530,6 +552,7 @@ public class MotherFrame extends Variables {
     private javax.swing.JPanel panelEduInfo;
     private javax.swing.JPanel panelExperiences;
     private javax.swing.JPanel panelImage;
+    private javax.swing.JPanel panelSkills;
     private javax.swing.JButton personalInfoButton;
     private javax.swing.JTextField phonefield;
     private javax.swing.JButton pictureButton;
