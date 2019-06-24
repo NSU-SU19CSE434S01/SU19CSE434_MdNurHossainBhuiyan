@@ -6,19 +6,24 @@
 package cvbuilderfinal;
 
 import java.awt.CardLayout;
+import javafx.scene.web.HTMLEditor;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 
 /**
  *
  * @author NHBSOHEL
  */
 public class MotherFrame extends Variables {
+        static JFrame mframe;
+    HTMLEditor expInfo, eduInfo, skillsInfo, achieveInfo;
 
     /**
      * Creates new form MotherFrame
      */
     public MotherFrame() {
         initComponents();
+         mframe = this;
     }
 
     /**
