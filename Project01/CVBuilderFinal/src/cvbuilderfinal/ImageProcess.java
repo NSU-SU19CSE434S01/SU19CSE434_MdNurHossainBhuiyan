@@ -21,7 +21,7 @@ import org.apache.commons.net.util.Base64;
  */
 public class ImageProcess {
      //Gets File Path & Returns BASE64 String Value
-    public  String toImageString(String path) throws FileNotFoundException, IOException {
+    public String toImageString(String path) throws FileNotFoundException, IOException {
     
         String imageString = "";
         try {
@@ -45,11 +45,11 @@ public class ImageProcess {
     
     //Returns A BufferedImage from BASE64 String.
     
-    public static BufferedImage toBufferedImage() throws IOException {
+    public  BufferedImage toBufferedImage() throws IOException {
         
         BufferedImage bufferedImage = null;
         try {
-            byte[] byteArray = Base64.decodeBase64(cvbuilder.Variables.imgString);
+            byte[] byteArray = Base64.decodeBase64(cvbuilderfinal.Variables.imgString);
             
             try (InputStream in = new ByteArrayInputStream(byteArray)) {
                 bufferedImage = ImageIO.read(in);
