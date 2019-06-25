@@ -42,4 +42,28 @@ public class ImageProcess {
     
     }
     
+    
+    //Returns A BufferedImage from BASE64 String.
+    
+    public static BufferedImage toBufferedImage() throws IOException {
+        
+        BufferedImage bufferedImage = null;
+        try {
+            byte[] byteArray = Base64.decodeBase64(cvbuilder.Variables.imgString);
+            
+            try (InputStream in = new ByteArrayInputStream(byteArray)) {
+                bufferedImage = ImageIO.read(in);
+            }
+            
+        } catch (IOException iOException) {
+            
+            return null;
+        }
+        
+        return bufferedImage;
+    }
+    
+    
+    
+    
 }
