@@ -18,7 +18,7 @@ public abstract class Variables extends javax.swing.JFrame {
             education="",skills="",achievement="";
     
     //Encoded Image Data
-    public String imgExtension="", imgString="";
+    public static String imgExtension="", imgString="";
 
    
     
