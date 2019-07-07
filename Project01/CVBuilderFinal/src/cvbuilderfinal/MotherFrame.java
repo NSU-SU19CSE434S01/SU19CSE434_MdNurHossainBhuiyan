@@ -15,7 +15,7 @@ import javax.swing.JFrame;
  * @author NHBSOHEL
  */
 public class MotherFrame extends Variables {
-        static JFrame mframe;
+        public static JFrame mframe;
     HTMLEditor expInfo, eduInfo, skillsInfo, achieveInfo;
 
     /**
