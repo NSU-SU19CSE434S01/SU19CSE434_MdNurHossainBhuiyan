@@ -6,9 +6,17 @@
 package cvbuilderfinal;
 
 import java.awt.CardLayout;
+
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.*;
+import java.awt.EventQueue;
+
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Scene;
 import javafx.scene.web.HTMLEditor;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 
 /**
  *

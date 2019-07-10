@@ -21,7 +21,7 @@ import org.apache.commons.net.util.Base64;
  */
 public class ImageProcess {
      //Gets File Path & Returns BASE64 String Value
-    public String toImageString(String path) throws FileNotFoundException, IOException {
+    public static String toImageString(String path) throws FileNotFoundException, IOException {
     
         String imageString = "";
         try {
@@ -45,7 +45,7 @@ public class ImageProcess {
     
     //Returns A BufferedImage from BASE64 String.
     
-    public  BufferedImage toBufferedImage() throws IOException {
+    public  static BufferedImage toBufferedImage() throws IOException {
         
         BufferedImage bufferedImage = null;
         try {
