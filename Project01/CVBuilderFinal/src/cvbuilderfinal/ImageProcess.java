@@ -49,7 +49,7 @@ public class ImageProcess {
         
         BufferedImage bufferedImage = null;
         try {
-            byte[] byteArray = Base64.decodeBase64(cvbuilderfinal.Variables.imgString);
+            byte[] byteArray = Base64.decodeBase64(Variables.imgString);
             
             try (InputStream in = new ByteArrayInputStream(byteArray)) {
                 bufferedImage = ImageIO.read(in);
