@@ -271,17 +271,17 @@ public class MotherFrame extends Variables {
         mainPanel.add(panelImage, "panelImage");
 
         panelExperiences.setLayout(new java.awt.BorderLayout());
-        final JFXPanel bioPanel = new JFXPanel();
+        final JFXPanel expPanel = new JFXPanel();
 
-        panelExperiences.add(bioPanel);
+        panelExperiences.add(expPanel);
         // Code of sub-components and layout - not shown here
         Platform.runLater(() -> {
-            bioInfo = new HTMLEditor();
-            Scene bioScene = new Scene(bioInfo);
-            bioInfo.setPrefHeight(245);
-            bioInfo.setPrefWidth(245);
-            bioInfo.setHtmlText(experience);
-            bioPanel.setScene(bioScene);
+            expInfo = new HTMLEditor();
+            Scene expScene = new Scene(expInfo);
+            expInfo.setPrefHeight(245);
+            expInfo.setPrefWidth(245);
+            expInfo.setHtmlText(experience);
+            expPanel.setScene(expScene);
         });
 
         jLabel22.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
@@ -310,37 +310,37 @@ public class MotherFrame extends Variables {
 
         mainPanel.add(panelEduInfo, "panelEduInfo");
 
-        final JFXPanel profPanel = new JFXPanel();
+        final JFXPanel skillPanel = new JFXPanel();
         panelSkills.setLayout(new java.awt.BorderLayout());
-        panelSkills.add(profPanel);
+        panelSkills.add(skillPanel);
 
         jLabel21.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
         jLabel21.setText("Your Skills ( Keep Blank if None )");
         panelSkills.add(jLabel21, java.awt.BorderLayout.PAGE_START);
 
         Platform.runLater(() -> {
-            profInfo = new HTMLEditor();
-            Scene profScene = new Scene(profInfo);
-            profInfo.setPrefHeight(245);
-            profInfo.setPrefWidth(245);
-            profInfo.setHtmlText(skills);
-            profPanel.setScene(profScene);
+            skillsInfo = new HTMLEditor();
+            Scene skillScene = new Scene(skillsInfo);
+            skillsInfo.setPrefHeight(245);
+            skillsInfo.setPrefWidth(245);
+            skillsInfo.setHtmlText(skills);
+            skillPanel.setScene(skillScene);
         });
 
         mainPanel.add(panelSkills, "panelProfInfo");
 
         panelAchievements.setLayout(new java.awt.BorderLayout());
-        final JFXPanel awardsPanel = new JFXPanel();
+        final JFXPanel achievePanel = new JFXPanel();
 
-        panelAchievements.add(awardsPanel);
+        panelAchievements.add(achievePanel);
         // Code of sub-components and layout - not shown here
         Platform.runLater(() -> {
-            awardsInfo = new HTMLEditor();
-            Scene awardsScene = new Scene(awardsInfo);
-            awardsInfo.setPrefHeight(245);
-            awardsInfo.setPrefWidth(245);
-            awardsInfo.setHtmlText(achievement);
-            awardsPanel.setScene(awardsScene);
+            achieveInfo = new HTMLEditor();
+            Scene achieveScene = new Scene(achieveInfo);
+            achieveInfo.setPrefHeight(245);
+            achieveInfo.setPrefWidth(245);
+            achieveInfo.setHtmlText(achievement);
+            achievePanel.setScene(achieveScene);
         });
 
         jLabel24.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
