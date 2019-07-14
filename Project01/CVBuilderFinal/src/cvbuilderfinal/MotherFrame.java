@@ -43,6 +43,7 @@ public class MotherFrame extends Variables {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        imageup = new javax.swing.JLabel();
         Last = new javax.swing.JButton();
         Previous = new javax.swing.JButton();
         First = new javax.swing.JButton();
@@ -55,15 +56,8 @@ public class MotherFrame extends Variables {
         eduInfoButton = new javax.swing.JButton();
         personalInfoButton = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
-        panelBasic = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        addressField = new javax.swing.JTextField(address);
-        emailfield = new javax.swing.JTextField(email);
-        phonefield = new javax.swing.JTextField(phone);
-        jLabel8 = new javax.swing.JLabel();
-        nameField = new javax.swing.JTextField(name);
-        jLabel12 = new javax.swing.JLabel();
+        panelSkills = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
         panelBiography = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         fatherNamefield = new javax.swing.JTextField(father);
@@ -76,17 +70,31 @@ public class MotherFrame extends Variables {
         nationalityfield = new javax.swing.JTextField(nationality);
         jLabel13 = new javax.swing.JLabel();
         bloodgfield = new javax.swing.JTextField(bloodg);
-        panelImage = new javax.swing.JPanel();
-        imageupbtn = new javax.swing.JButton();
-        imageup = new javax.swing.JLabel();
-        panelExperiences = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        panelEduInfo = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        panelSkills = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
         panelAchievements = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
+        panelEduInfo = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        panelImage = new javax.swing.JPanel();
+        imageupbtn = new javax.swing.JButton();
+        panelExperiences = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        panelBasic = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        addressField = new javax.swing.JTextField(address);
+        emailfield = new javax.swing.JTextField(email);
+        phonefield = new javax.swing.JTextField(phone);
+        jLabel8 = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField(name);
+        jLabel12 = new javax.swing.JLabel();
+
+        try {
+            imageup.setIcon(new javax.swing.ImageIcon(ImageProcess.toBufferedImage()));
+        }
+
+        catch(Exception x) {
+
+        }
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,6 +177,135 @@ public class MotherFrame extends Variables {
 
         mainPanel.setLayout(new java.awt.CardLayout());
 
+        final JFXPanel profPanel = new JFXPanel();
+        panelSkills.setLayout(new java.awt.BorderLayout());
+        panelSkills.add(profPanel);
+
+        jLabel21.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel21.setText("Your Skills ( Keep Blank if None )");
+        panelSkills.add(jLabel21, java.awt.BorderLayout.CENTER);
+
+        Platform.runLater(() -> {
+            profInfo = new HTMLEditor();
+            Scene profScene = new Scene(profInfo);
+            profInfo.setPrefHeight(245);
+            profInfo.setPrefWidth(245);
+            profInfo.setHtmlText(skills);
+            profPanel.setScene(profScene);
+        });
+
+        mainPanel.add(panelSkills, "panelProfInfo");
+
+        panelBiography.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        panelBiography.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 30));
+        panelBiography.add(fatherNamefield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 270, 30));
+
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel2.setText("Father's Name:");
+        panelBiography.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 30));
+        panelBiography.add(motherNamefield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 270, 30));
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel7.setText("Mothers's Name:");
+        panelBiography.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 30));
+
+        jLabel10.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel10.setText("Religion:");
+        panelBiography.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 30));
+
+        jLabel11.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel11.setText("Nationality:");
+        panelBiography.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, 30));
+        panelBiography.add(religionfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 270, 30));
+        panelBiography.add(nationalityfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 270, 30));
+
+        jLabel13.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel13.setText("Blood Group:");
+        panelBiography.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, 30));
+
+        bloodgfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bloodgfieldActionPerformed(evt);
+            }
+        });
+        panelBiography.add(bloodgfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 270, 30));
+
+        mainPanel.add(panelBiography, "panelUnivInfo");
+
+        panelAchievements.setLayout(new java.awt.BorderLayout());
+        final JFXPanel awardsPanel = new JFXPanel();
+
+        panelAchievements.add(awardsPanel);
+        // Code of sub-components and layout - not shown here
+        Platform.runLater(() -> {
+            awardsInfo = new HTMLEditor();
+            Scene awardsScene = new Scene(awardsInfo);
+            awardsInfo.setPrefHeight(245);
+            awardsInfo.setPrefWidth(245);
+            awardsInfo.setHtmlText(achievement);
+            awardsPanel.setScene(awardsScene);
+        });
+
+        jLabel24.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel24.setText("Achievements ( Keep Blank if None )");
+        panelAchievements.add(jLabel24, java.awt.BorderLayout.PAGE_START);
+
+        mainPanel.add(panelAchievements, "panelAwards");
+
+        panelEduInfo.setLayout(new java.awt.BorderLayout());
+        final JFXPanel eduPanel = new JFXPanel();
+
+        panelEduInfo.add(eduPanel);
+        // Code of sub-components and layout - not shown here
+        Platform.runLater(() -> {
+            eduInfo = new HTMLEditor();
+            Scene eduScene = new Scene(eduInfo);
+            eduInfo.setPrefHeight(245);
+            eduInfo.setPrefWidth(245);
+            eduInfo.setHtmlText(education);
+            eduPanel.setScene(eduScene);
+        });
+
+        jLabel23.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel23.setText("Educational Information");
+        panelEduInfo.add(jLabel23, java.awt.BorderLayout.PAGE_START);
+
+        mainPanel.add(panelEduInfo, "panelEduInfo");
+
+        panelImage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        imageupbtn.setText("Upload Image");
+        imageupbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imageupbtnActionPerformed(evt);
+            }
+        });
+        panelImage.add(imageupbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 110, 40));
+
+        mainPanel.add(panelImage, "panelImage");
+
+        panelExperiences.setLayout(new java.awt.BorderLayout());
+        final JFXPanel bioPanel = new JFXPanel();
+
+        panelExperiences.add(bioPanel);
+        // Code of sub-components and layout - not shown here
+        Platform.runLater(() -> {
+            bioInfo = new HTMLEditor();
+            Scene bioScene = new Scene(bioInfo);
+            bioInfo.setPrefHeight(245);
+            bioInfo.setPrefWidth(245);
+            bioInfo.setHtmlText(experience);
+            bioPanel.setScene(bioScene);
+        });
+
+        jLabel22.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel22.setText("Experiences:");
+        panelExperiences.add(jLabel22, java.awt.BorderLayout.PAGE_START);
+
+        mainPanel.add(panelExperiences, "panelBiography");
+
         panelBasic.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
@@ -211,151 +348,13 @@ public class MotherFrame extends Variables {
 
         mainPanel.add(panelBasic, "panelBasic");
 
-        panelBiography.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        panelBiography.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 30));
-        panelBiography.add(fatherNamefield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 270, 30));
-
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel2.setText("Father's Name:");
-        panelBiography.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 30));
-        panelBiography.add(motherNamefield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 270, 30));
-
-        jLabel7.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel7.setText("Mothers's Name:");
-        panelBiography.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 30));
-
-        jLabel10.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel10.setText("Religion:");
-        panelBiography.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 30));
-
-        jLabel11.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel11.setText("Nationality:");
-        panelBiography.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, 30));
-        panelBiography.add(religionfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 270, 30));
-        panelBiography.add(nationalityfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 270, 30));
-
-        jLabel13.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel13.setText("Blood Group:");
-        panelBiography.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, 30));
-
-        bloodgfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bloodgfieldActionPerformed(evt);
-            }
-        });
-        panelBiography.add(bloodgfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 270, 30));
-
-        mainPanel.add(panelBiography, "panelUnivInfo");
-
-        panelImage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        imageupbtn.setText("Upload Image");
-        imageupbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imageupbtnActionPerformed(evt);
-            }
-        });
-        panelImage.add(imageupbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 110, 40));
-
-        try {
-            imageup.setIcon(new javax.swing.ImageIcon(ImageProcess.toBufferedImage()));
-        }
-
-        catch(Exception x) {
-
-        }
-        panelImage.add(imageup, new org.netbeans.lib.awtextra.AbsoluteConstraints(-220, -170, 670, 470));
-
-        mainPanel.add(panelImage, "panelImage");
-
-        panelExperiences.setLayout(new java.awt.BorderLayout());
-        final JFXPanel expPanel = new JFXPanel();
-
-        panelExperiences.add(expPanel);
-        // Code of sub-components and layout - not shown here
-        Platform.runLater(() -> {
-            expInfo = new HTMLEditor();
-            Scene expScene = new Scene(expInfo);
-            expInfo.setPrefHeight(245);
-            expInfo.setPrefWidth(245);
-            expInfo.setHtmlText(experience);
-            expPanel.setScene(expScene);
-        });
-
-        jLabel22.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
-        jLabel22.setText("Experiences:");
-        panelExperiences.add(jLabel22, java.awt.BorderLayout.PAGE_START);
-
-        mainPanel.add(panelExperiences, "panelBiography");
-
-        panelEduInfo.setLayout(new java.awt.BorderLayout());
-        final JFXPanel eduPanel = new JFXPanel();
-
-        panelEduInfo.add(eduPanel);
-        // Code of sub-components and layout - not shown here
-        Platform.runLater(() -> {
-            eduInfo = new HTMLEditor();
-            Scene eduScene = new Scene(eduInfo);
-            eduInfo.setPrefHeight(245);
-            eduInfo.setPrefWidth(245);
-            eduInfo.setHtmlText(education);
-            eduPanel.setScene(eduScene);
-        });
-
-        jLabel23.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
-        jLabel23.setText("Educational Information");
-        panelEduInfo.add(jLabel23, java.awt.BorderLayout.PAGE_START);
-
-        mainPanel.add(panelEduInfo, "panelEduInfo");
-
-        final JFXPanel skillPanel = new JFXPanel();
-        panelSkills.setLayout(new java.awt.BorderLayout());
-        panelSkills.add(skillPanel);
-
-        jLabel21.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
-        jLabel21.setText("Your Skills ( Keep Blank if None )");
-        panelSkills.add(jLabel21, java.awt.BorderLayout.PAGE_START);
-
-        Platform.runLater(() -> {
-            skillsInfo = new HTMLEditor();
-            Scene skillScene = new Scene(skillsInfo);
-            skillsInfo.setPrefHeight(245);
-            skillsInfo.setPrefWidth(245);
-            skillsInfo.setHtmlText(skills);
-            skillPanel.setScene(skillScene);
-        });
-
-        mainPanel.add(panelSkills, "panelProfInfo");
-
-        panelAchievements.setLayout(new java.awt.BorderLayout());
-        final JFXPanel achievePanel = new JFXPanel();
-
-        panelAchievements.add(achievePanel);
-        // Code of sub-components and layout - not shown here
-        Platform.runLater(() -> {
-            achieveInfo = new HTMLEditor();
-            Scene achieveScene = new Scene(achieveInfo);
-            achieveInfo.setPrefHeight(245);
-            achieveInfo.setPrefWidth(245);
-            achieveInfo.setHtmlText(achievement);
-            achievePanel.setScene(achieveScene);
-        });
-
-        jLabel24.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
-        jLabel24.setText("Achievements ( Keep Blank if None )");
-        panelAchievements.add(jLabel24, java.awt.BorderLayout.PAGE_START);
-
-        mainPanel.add(panelAchievements, "panelAwards");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(personalInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -365,7 +364,7 @@ public class MotherFrame extends Variables {
                             .addComponent(eduInfoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(skillsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(achievementsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(First, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -373,15 +372,15 @@ public class MotherFrame extends Variables {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Last, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 399, Short.MAX_VALUE)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addComponent(Last, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(84, 84, 84))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(263, 263, 263)
                 .addComponent(personalInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(biographyInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,19 +394,19 @@ public class MotherFrame extends Variables {
                 .addComponent(skillsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(achievementsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(22, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(First)
                             .addComponent(Previous, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Next)
                             .addComponent(Last))
-                        .addGap(48, 48, 48))))
+                        .addGap(48, 48, 48))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -419,53 +418,17 @@ public class MotherFrame extends Variables {
         card.show(mainPanel, "panelBasic");
     }//GEN-LAST:event_personalInfoButtonActionPerformed
 
-    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressFieldActionPerformed
-
-    private void phonefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonefieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phonefieldActionPerformed
-
-    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameFieldActionPerformed
-
     private void biographyInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_biographyInfoButtonActionPerformed
         // TODO add your handling code here:
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "panelUnivInfo");
     }//GEN-LAST:event_biographyInfoButtonActionPerformed
 
-    private void bloodgfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodgfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bloodgfieldActionPerformed
-
     private void pictureButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pictureButtonActionPerformed
         // TODO add your handling code here:
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "panelImage");
     }//GEN-LAST:event_pictureButtonActionPerformed
-
-    private void imageupbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imageupbtnActionPerformed
-        // TODO add your handling code here:
-        JFileChooser choose = new JFileChooser();
-
-        choose.showOpenDialog(null);
-
-        String path = choose.getSelectedFile().getPath();
-        String filename=choose.getSelectedFile().getName();
-        imgExtension = filename.substring(filename.lastIndexOf("."),filename.length());
-        imgExtension = imgExtension.replace(".", "");
-
-        try {
-            imgString = ImageProcess.toImageString(path);
-        } catch (IOException ex) {
-            Logger.getLogger(MotherFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        //    System.out.println(path);
-        imageup.setIcon(new javax.swing.ImageIcon(path));
-    }//GEN-LAST:event_imageupbtnActionPerformed
 
     private void experiencesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_experiencesButtonActionPerformed
         // TODO add your handling code here:
@@ -514,6 +477,42 @@ public class MotherFrame extends Variables {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.last(mainPanel);
     }//GEN-LAST:event_LastActionPerformed
+
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
+
+    private void phonefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonefieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phonefieldActionPerformed
+
+    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressFieldActionPerformed
+
+    private void imageupbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imageupbtnActionPerformed
+        // TODO add your handling code here:
+        JFileChooser choose = new JFileChooser();
+
+        choose.showOpenDialog(null);
+
+        String path = choose.getSelectedFile().getPath();
+        String filename=choose.getSelectedFile().getName();
+        imgExtension = filename.substring(filename.lastIndexOf("."),filename.length());
+        imgExtension = imgExtension.replace(".", "");
+
+        try {
+            imgString = ImageProcess.toImageString(path);
+        } catch (IOException ex) {
+            Logger.getLogger(MotherFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //    System.out.println(path);
+        imageup.setIcon(new javax.swing.ImageIcon(path));
+    }//GEN-LAST:event_imageupbtnActionPerformed
+
+    private void bloodgfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodgfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bloodgfieldActionPerformed
 
     /**
      * @param args the command line arguments
