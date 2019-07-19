@@ -54,6 +54,8 @@ public class MotherFrame extends Variables {
         biographyInfoButton = new javax.swing.JButton();
         achievementsButton = new javax.swing.JButton();
         eduInfoButton = new javax.swing.JButton();
+        Export = new javax.swing.JButton();
+        Preview = new javax.swing.JButton();
         personalInfoButton = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
         panelSkills = new javax.swing.JPanel();
@@ -165,6 +167,20 @@ public class MotherFrame extends Variables {
         eduInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eduInfoButtonActionPerformed(evt);
+            }
+        });
+
+        Export.setText("Export as HTML");
+        Export.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExportActionPerformed(evt);
+            }
+        });
+
+        Preview.setText("Preview");
+        Preview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PreviewActionPerformed(evt);
             }
         });
 
@@ -373,8 +389,16 @@ public class MotherFrame extends Variables {
                         .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Last, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 92, Short.MAX_VALUE)
+                                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Export)
+                                .addGap(18, 18, 18)
+                                .addComponent(Preview)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(84, 84, 84))
         );
         layout.setVerticalGroup(
@@ -394,14 +418,16 @@ public class MotherFrame extends Variables {
                 .addComponent(skillsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(achievementsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(First)
                             .addComponent(Previous, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Next)
-                            .addComponent(Last))
+                            .addComponent(Last)
+                            .addComponent(Export)
+                            .addComponent(Preview))
                         .addGap(48, 48, 48))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(120, 120, 120)
@@ -418,17 +444,53 @@ public class MotherFrame extends Variables {
         card.show(mainPanel, "panelBasic");
     }//GEN-LAST:event_personalInfoButtonActionPerformed
 
+    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressFieldActionPerformed
+
+    private void phonefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonefieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phonefieldActionPerformed
+
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
+
     private void biographyInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_biographyInfoButtonActionPerformed
         // TODO add your handling code here:
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "panelUnivInfo");
     }//GEN-LAST:event_biographyInfoButtonActionPerformed
 
+    private void bloodgfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodgfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bloodgfieldActionPerformed
+
     private void pictureButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pictureButtonActionPerformed
         // TODO add your handling code here:
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "panelImage");
     }//GEN-LAST:event_pictureButtonActionPerformed
+
+    private void imageupbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imageupbtnActionPerformed
+        // TODO add your handling code here:
+        JFileChooser choose = new JFileChooser();
+
+        choose.showOpenDialog(null);
+
+        String path = choose.getSelectedFile().getPath();
+        String filename=choose.getSelectedFile().getName();
+        imgExtension = filename.substring(filename.lastIndexOf("."),filename.length());
+        imgExtension = imgExtension.replace(".", "");
+
+        try {
+            imgString = ImageProcess.toImageString(path);
+        } catch (IOException ex) {
+            Logger.getLogger(MotherFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //    System.out.println(path);
+        imageup.setIcon(new javax.swing.ImageIcon(path));
+    }//GEN-LAST:event_imageupbtnActionPerformed
 
     private void experiencesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_experiencesButtonActionPerformed
         // TODO add your handling code here:
@@ -478,41 +540,56 @@ public class MotherFrame extends Variables {
         card.last(mainPanel);
     }//GEN-LAST:event_LastActionPerformed
 
-    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+    private void ExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportActionPerformed
+
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameFieldActionPerformed
 
-    private void phonefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonefieldActionPerformed
+        //Get Values from TextFields and set
+        name = nameField.getText();
+        address = addressField.getText();
+        email = emailfield.getText();
+        phone = phonefield.getText();
+
+        experience = expInfo.getHtmlText();
+        experience = experience.replace("<html dir=\"ltr\"><head></head>","");
+        experience = experience.replace("<body contenteditable=\"true\">","");
+        experience = experience.replace("</body></html>","");
+
+        father = fatherNamefield.getText();
+        mother = motherNamefield.getText();
+        religion = religionfield.getText();
+        nationality = nationalityfield.getText();
+        bloodg = bloodgfield.getText();
+
+        education = eduInfo.getHtmlText();
+        education = education.replace("<html dir=\"ltr\"><head></head>","");
+        education = education.replace("<body contenteditable=\"true\">","");
+        education = education.replace("</body></html>","");
+
+        skills = skillsInfo.getHtmlText();
+        skills = skills.replace("<html dir=\"ltr\"><head></head>","");
+        skills = skills.replace("<body contenteditable=\"true\">","");
+        skills = skills.replace("</body></html>","");
+
+        achievement = skillsInfo.getHtmlText();
+        achievement = achievement.replace("<html dir=\"ltr\"><head></head>","");
+        achievement = achievement.replace("<body contenteditable=\"true\">","");
+        achievement = achievement.replace("</body></html>","");
+
+        EventQueue.invokeLater(() -> {
+            try {
+
+                JOptionPane.showMessageDialog(this,HTMLWriter.writeHTML());
+            } catch (IOException ex) {
+                Logger.getLogger(MotherFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+    }//GEN-LAST:event_ExportActionPerformed
+
+    private void PreviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PreviewActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_phonefieldActionPerformed
-
-    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressFieldActionPerformed
-
-    private void imageupbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imageupbtnActionPerformed
-        // TODO add your handling code here:
-        JFileChooser choose = new JFileChooser();
-
-        choose.showOpenDialog(null);
-
-        String path = choose.getSelectedFile().getPath();
-        String filename=choose.getSelectedFile().getName();
-        imgExtension = filename.substring(filename.lastIndexOf("."),filename.length());
-        imgExtension = imgExtension.replace(".", "");
-
-        try {
-            imgString = ImageProcess.toImageString(path);
-        } catch (IOException ex) {
-            Logger.getLogger(MotherFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        //    System.out.println(path);
-        imageup.setIcon(new javax.swing.ImageIcon(path));
-    }//GEN-LAST:event_imageupbtnActionPerformed
-
-    private void bloodgfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodgfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bloodgfieldActionPerformed
+        PreviewPage.mySitePreview();
+    }//GEN-LAST:event_PreviewActionPerformed
 
     /**
      * @param args the command line arguments
@@ -550,9 +627,11 @@ public class MotherFrame extends Variables {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Export;
     private javax.swing.JButton First;
     private javax.swing.JButton Last;
     private javax.swing.JButton Next;
+    private javax.swing.JButton Preview;
     private javax.swing.JButton Previous;
     private javax.swing.JButton achievementsButton;
     private javax.swing.JTextField addressField;
