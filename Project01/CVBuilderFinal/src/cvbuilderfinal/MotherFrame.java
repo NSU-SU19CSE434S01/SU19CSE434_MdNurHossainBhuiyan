@@ -583,7 +583,7 @@ public class MotherFrame extends Variables {
         skills = skills.replace("<body contenteditable=\"true\">","");
         skills = skills.replace("</body></html>","");
 
-        achievement = skillsInfo.getHtmlText();
+        achievement = achieveInfo.getHtmlText();
         achievement = achievement.replace("<html dir=\"ltr\"><head></head>","");
         achievement = achievement.replace("<body contenteditable=\"true\">","");
         achievement = achievement.replace("</body></html>","");
