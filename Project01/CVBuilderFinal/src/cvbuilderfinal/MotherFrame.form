@@ -275,6 +275,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="fatherNamefield">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fatherNamefieldActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField(father)"/>
               </AuxValues>
@@ -298,6 +301,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="motherNamefield">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="motherNamefieldActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField(mother)"/>
               </AuxValues>
