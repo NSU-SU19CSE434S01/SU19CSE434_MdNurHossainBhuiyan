@@ -40,8 +40,30 @@ public class HTMLWriterTest {
     /**
      * Test of writeHTML method, of class HTMLWriter.
      */
+    
+    /**
+     * Input space partitioning
+     * Characteristics:
+     * c1: File write successful
+     * Blocks:
+     *  b1: True /base
+     *  b2:False
+     * 
+     * 
+     * File write failed
+     * Blocks:
+     * d1:True
+     * d2:False  /base
+     * 
+     * Base choice partitioning
+     * {b2,d2} or {b1,d1}
+     * 
+     * 
+     * 
+     * @throws Exception 
+     */
     @Test
-    public void testWriteHTML() throws Exception {
+    public void testWriteHTML() throws Exception {     
         System.out.println("writeHTML");
         String expResult = "";
         String result = HTMLWriter.writeHTML();
