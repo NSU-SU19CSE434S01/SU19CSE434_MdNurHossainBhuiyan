@@ -50,13 +50,13 @@ public class HTMLWriterTest {
      *  b2:False
      * 
      * 
-     * File write failed
+     * c2:File write failed
      * Blocks:
      * d1:True
      * d2:False  /base
      * 
      * Base choice partitioning
-     * {b2,d2} or {b1,d1}
+     * {b2,d2} or {b2,d1} or {b1,d2}
      * 
      * 
      * 
