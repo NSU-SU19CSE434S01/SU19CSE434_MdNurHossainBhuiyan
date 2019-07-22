@@ -40,6 +40,23 @@ public class ImageProcessTest {
 
     /**
      * Test of toImageString method, of class ImageProcess.
+     * 
+     * 
+     * Input Space partitioning
+     * 
+     * Characteristic:
+     * c1: Image to string successful
+     * block: b1: true /base
+     *         b2:false
+     * c2:Image to string failed
+     *   block d1: true /base
+     *         d2:false  
+     * 
+     * 
+     * base choice: {b1,d1} ,{b1,d2},{b2,d1}
+     * 
+     * 
+     * 
      */
     @Test
     public void testToImageString() throws Exception {
