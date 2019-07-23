@@ -72,6 +72,22 @@ public class ImageProcessTest {
 
     /**
      * Test of toBufferedImage method, of class ImageProcess.
+     * 
+     * Input space partitioning
+     * 
+     * Characteristic:
+     * c1: String to image successful
+     * Block: b1: true /base
+     *         b2:false
+     * 
+     * c2: String to image failed
+     *    block: d1:true /base
+     *           d2:false
+     * 
+     * base choice: {b1,d1},{b1,d2},{b2,d2}
+     *
+     * 
+     * 
      */
     @Test
     public void testToBufferedImage() throws Exception {
