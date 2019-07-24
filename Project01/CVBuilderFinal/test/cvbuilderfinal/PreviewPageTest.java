@@ -39,6 +39,25 @@ public class PreviewPageTest {
 
     /**
      * Test of mySitePreview method, of class PreviewPage.
+     * Input space partitioning
+     * 
+     * Characteristics:
+     * c1: preview successful
+     * Blocks:
+     *  b1: True /base
+     *  b2:False
+     * 
+     * 
+     * c2:preview failed
+     * Blocks:
+     * d1:True
+     * d2:False  /base
+     * 
+     * Base choice partitioning
+     * {b2,d2} or {b2,d1} or {b1,d2}
+     * 
+     * 
+     * 
      */
     @Test
     public void testMySitePreview() {
