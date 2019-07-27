@@ -39,6 +39,24 @@ public class SystemInitializerTest {
 
     /**
      * Test of initSystem method, of class SystemInitializer.
+     * 
+     * 
+     * Characteristics:
+     * c1: initiate successful
+     * Blocks:
+     *  b1: True /base
+     *  b2:False
+     * 
+     * 
+     * c2:Initiate failed
+     * Blocks:
+     * d1:True
+     * d2:False  /base
+     * 
+     * Base choice partitioning
+     * {b2,d2} or {b2,d1} or {b1,d2}
+     * 
+     * 
      */
     @Test
     public void testInitSystem() throws Exception {
