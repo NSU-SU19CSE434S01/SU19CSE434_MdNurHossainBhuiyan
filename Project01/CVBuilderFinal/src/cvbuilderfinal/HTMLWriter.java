@@ -16,7 +16,22 @@ import org.apache.commons.io.FileUtils;
  *
  * @author NHBSOHEL
  */
-public class HTMLWriter extends Variables {
+public  class HTMLWriter extends Variables {
+    
+    /**
+     * Graph partition
+     * 
+     * node:0 //html file=null
+     * node:1 //string replace success
+     * node:1 child:1 //write html
+     * 
+     * 
+     * node:2 //string replace failed
+     * node:2 child:2 //error occured
+     * 
+     * @return
+     * @throws IOException 
+     */
      public static String writeHTML() throws IOException{
         File htmlfile = null;
         try {
