@@ -5,8 +5,8 @@
  */
 package cvbuilderfinal;
 
-import static cvbuilder.Variables.imgExtension;
-import static cvbuilder.Variables.imgString;
+//import static Variables.imgExtension;
+//import static cvbuilder.Variables.imgString;
 import java.awt.HeadlessException;
 import java.io.File;
 import java.io.IOException;
