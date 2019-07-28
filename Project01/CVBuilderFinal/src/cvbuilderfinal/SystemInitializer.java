@@ -36,29 +36,66 @@ public abstract class SystemInitializer {
     private static void setDefaultHTML() {
         
         String htmlstr = "<html>\n" +
+"\n" +
 "<head>\n" +
-"<title> $title </title>\n" +
+"    <title> $title </title>\n" +
 "</head>\n" +
+"\n" +
 "<body>\n" +
-"<h2>$name $address</h2>\n" +
-"<h3>$father</h3>\n" +
-"<h4>$mother<br>$bloodg</h4>\n" +
+"    <div class=\"main\">\n" +
+"        <div class=\"personal\">\n" +
+"            <p style=\"float: right\" ><img style=\"height: 200px;width: 200px\" src=\"data:image/$type;base64,$imgStr\"></p><br>\n" +
+"            <h1>$name</h1>\n" +
+"            <h4>$address</h4>\n" +
+"            <p>Cell:$phone</p>\n" +
+"            <p>Email:$email</p>\n" +
+"           \n" +
+"        </div>\n" +
+"        <hr>\n" +
+"<h3>Education</h3>\n" +
+"        <div class=\"edu\">\n" +
+"            $educational\n" +
 "\n" +
-"<p align=\"center\"><img src=\"data:image/$type;base64,$imgStr\" ></p>\n" +
-"<h4>Religion: <i>$religion </i><br>Nationality: <i>$nationality</i><br>Phone Number: <i>$phone</i><br>Email: <i>$email</i><br></h4>\n" +
+"        </div>\n" +
+"        <hr>\n" +
+"        <h3>Experiences</h3>\n" +
+"        <div class=\"exp\">\n" +
+"            $experience\n" +
+"        </div>\n" +
+"        <hr>\n" +
+"        <h3>Skills</h3>\n" +
+"        <div class=\"skill\">\n" +
+"            $skills\n" +
+"\n" +
+"        </div>\n" +
+"        <hr>\n" +
+"        <h3>Achievements</h3>\n" +
+"        <div class=\"achieve\">\n" +
+"            $achievement\n" +
+"\n" +
+"        </div>\n" +
+"        <hr>\n" +
+"         <h3>Biography</h3>\n" +
+"\n" +
+"        <div class=\"bio\">\n" +
+"             <p>Father's Name: $father</p>\n" +
+"           <p>  Mothers's Name: $mother</p>\n" +
+"             <p>Religion: $religion</p>\n" +
+"            <p>Blood Group:$bloodg</p>\n" +
+"        </div>\n" +
 "\n" +
 "\n" +
-"<center><p><h2>Biography</h2></p></center>\n" +
-"<p><h4>$experience</h4></p>\n" +
-"<hr>\n" +
 "\n" +
-"$educational\n" +
 "\n" +
-"$skills\n" +
 "\n" +
-"$achievement\n" +
 "\n" +
+"\n" +
+"\n" +
+"\n" +
+"\n" +
+"    </div>\n" +
 "</body>\n" +
+"\n" +
 "</html>";
         
         File newhtml;

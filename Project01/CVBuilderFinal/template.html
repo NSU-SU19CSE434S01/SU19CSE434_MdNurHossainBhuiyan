@@ -1,25 +1,62 @@
 <html>
+
 <head>
-<title> $title </title>
+    <title> $title </title>
 </head>
+
 <body>
-<h2>$name $address</h2>
-<h3>$father</h3>
-<h4>$mother<br>$bloodg</h4>
+    <div class="main">
+        <div class="personal">
+            <p style="float: right" ><img style="height: 200px;width: 200px" src="data:image/$type;base64,$imgStr"></p><br><br>
+            <h1>$name</h1>
+            <h4>$address</h4>
+            <p>Cell:$phone</p>
+            <p>Email:$email</p>
+           
+        </div>
+        <hr>
+<h3>Education</h3>
+        <div class="edu">
+            $educational
 
-<p align="center"><img src="data:image/$type;base64,$imgStr" ></p>
-<h4>Religion: <i>$religion </i><br>Nationality: <i>$nationality</i><br>Phone Number: <i>$phone</i><br>Email: <i>$email</i><br></h4>
+        </div>
+        <hr>
+        <h3>Experiences</h3>
+        <div class="exp">
+            $experience
+        </div>
+        <hr>
+        <h3>Skills</h3>
+        <div class="skill">
+            $skills
+
+        </div>
+        <hr>
+        <h3>Achievements</h3>
+        <div class="achieve">
+            $achievement
+
+        </div>
+        <hr>
+         <h3>Biography</h3>
+
+        <div class="bio">
+             <p>Father's Name: $father</p>
+           <p>  Mothers's Name: $mother</p>
+             <p>Religion: $religion</p>
+            <p>Blood Group:$bloodg</p>
+        </div>
 
 
-<center><p><h2>Biography</h2></p></center>
-<p><h4>$experience</h4></p>
-<hr>
 
-$educational
 
-$skills
 
-$achievement
 
+
+
+
+
+    </div>
 </body>
+
 </html>

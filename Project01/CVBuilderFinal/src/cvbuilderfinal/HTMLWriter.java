@@ -41,7 +41,7 @@ public class HTMLWriter extends Variables {
             htmlstr = htmlstr.replace("$mother",mother);
             htmlstr = htmlstr.replace("$bloodg",bloodg);
             htmlstr = htmlstr.replace("$religion",religion);
-            htmlstr = htmlstr.replace("$ntionality",nationality);
+            htmlstr = htmlstr.replace("$nationality",nationality);
             htmlstr = htmlstr.replace("$phone",phone);
             htmlstr = htmlstr.replace("$email",email);
             htmlstr = htmlstr.replace("$experience",experience);
