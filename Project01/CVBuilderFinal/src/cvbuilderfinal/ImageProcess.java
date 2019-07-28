@@ -21,6 +21,24 @@ import org.apache.commons.net.util.Base64;
  */
 public class ImageProcess {
      //Gets File Path & Returns BASE64 String Value
+    
+        /**
+     * Graph partition
+     * 
+     * node:0 //imageString=null
+     * node:1 //image to string success
+     * node:1 child:1 //store path
+     * 
+     * 
+     * node:2 //image to string failed
+     * node:2 child:2 //error occurred
+     * 
+   
+*     *  
+     * @param path
+     * @return 
+     * @throws java.io.FileNotFoundException
+     */
     public static String toImageString(String path) throws FileNotFoundException, IOException {
     
         String imageString = "";
