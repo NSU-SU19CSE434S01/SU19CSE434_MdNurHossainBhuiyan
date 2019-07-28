@@ -18,8 +18,26 @@ import javax.swing.JPanel;
 
 /**
  *
+ * 
+ * 
+ * 
  * @author NHBSOHEL
- */
+ * 
+ *     /**
+     * Graph partition
+     * 
+     * node:0 //jpanel=null
+     * node:1 //preview success
+     * node:1 child:1 //show index file
+     * 
+     * 
+     * node:2 //preview failed
+     * node:2 child:2 //error occured
+     * 
+     * 
+     * @throws IOException 
+     */
+ 
 public class PreviewPage {
     public static void mySitePreview() {
 
