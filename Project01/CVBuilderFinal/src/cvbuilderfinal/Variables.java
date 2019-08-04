@@ -9,16 +9,16 @@ package cvbuilderfinal;
  *
  * @author NHBSOHEL
  */
-public abstract class Variables extends javax.swing.JFrame {
+public  class Variables extends javax.swing.JFrame {
     
     //This Class contains all central variables which will be used for the project
-    static String name="",address="",experience="",
+    public String name="",address="",experience="",
             father="",mother="",bloodg="",
             religion="",nationality="",phone="",email="",
             education="",skills="",achievement="";
     
     //Encoded Image Data
-    public static String imgExtension="", imgString="";
+    public String imgExtension="", imgString="";
 
    
     

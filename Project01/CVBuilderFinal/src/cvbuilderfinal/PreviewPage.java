@@ -39,7 +39,7 @@ import javax.swing.JPanel;
      */
  
 public class PreviewPage {
-    public static void mySitePreview() {
+    public  String mySitePreview() {
 
     JPanel myPanel = new JPanel();
 
@@ -68,5 +68,6 @@ public class PreviewPage {
        JDialog dialog = pane.createDialog(MotherFrame.mframe, "Website Preview - CV BUILDER");
        dialog.setSize(new Dimension(800,600));
        dialog.setVisible(true);
+       return "Preview Success";
 }
 }

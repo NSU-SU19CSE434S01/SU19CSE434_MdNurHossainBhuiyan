@@ -24,7 +24,8 @@ import javafx.scene.web.HTMLEditor;
  */
 public class MotherFrame extends Variables {
         public static JFrame mframe;
-    HTMLEditor bioInfo, eduInfo, awardsInfo, profInfo;
+        public String path;
+    HTMLEditor expInfo, eduInfo, skillsInfo, achieveInfo;
 
     /**
      * Creates new form MotherFrame
@@ -91,7 +92,6 @@ public class MotherFrame extends Variables {
         jLabel24 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 800));
 
         First.setText("First");
         First.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +142,7 @@ public class MotherFrame extends Variables {
             }
         });
 
-        experiencesButton.setText("EXPERIENCE");
+        experiencesButton.setText("BIOGRAPHY");
         experiencesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 experiencesButtonActionPerformed(evt);
@@ -163,7 +163,7 @@ public class MotherFrame extends Variables {
             }
         });
 
-        biographyInfoButton.setText("BIOGRAPHY");
+        biographyInfoButton.setText("EXPERIENCE");
         biographyInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 biographyInfoButtonActionPerformed(evt);
@@ -229,17 +229,17 @@ public class MotherFrame extends Variables {
         mainPanel.add(panelBasic, "panelBasic");
 
         panelExperiences.setLayout(new java.awt.BorderLayout());
-        final JFXPanel bioPanel = new JFXPanel();
+        final JFXPanel expPanel = new JFXPanel();
 
-        panelExperiences.add(bioPanel);
+        panelExperiences.add(expPanel);
         // Code of sub-components and layout - not shown here
         Platform.runLater(() -> {
-            bioInfo = new HTMLEditor();
-            Scene bioScene = new Scene(bioInfo);
-            bioInfo.setPrefHeight(245);
-            bioInfo.setPrefWidth(245);
-            bioInfo.setHtmlText(experience);
-            bioPanel.setScene(bioScene);
+            expInfo = new HTMLEditor();
+            Scene expScene = new Scene(expInfo);
+            expInfo.setPrefHeight(245);
+            expInfo.setPrefWidth(245);
+            expInfo.setHtmlText(experience);
+            expPanel.setScene(expScene);
         });
 
         jLabel22.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
@@ -251,7 +251,8 @@ public class MotherFrame extends Variables {
         panelImage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         try {
-            imageup.setIcon(new javax.swing.ImageIcon(ImageProcess.toBufferedImage()));
+			ImageProcess a=new ImageProcess();
+            imageup.setIcon(new javax.swing.ImageIcon(a.toBufferedImage()));
         }
 
         catch(Exception x) {
@@ -327,37 +328,37 @@ public class MotherFrame extends Variables {
 
         mainPanel.add(panelEduInfo, "panelEduInfo");
 
-        final JFXPanel profPanel = new JFXPanel();
+        final JFXPanel skillsPanel = new JFXPanel();
         panelSkills.setLayout(new java.awt.BorderLayout());
-        panelSkills.add(profPanel);
+        panelSkills.add(skillsPanel);
 
         jLabel21.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
         jLabel21.setText("Your Skills ( Keep Blank if None )");
         panelSkills.add(jLabel21, java.awt.BorderLayout.PAGE_START);
 
         Platform.runLater(() -> {
-            profInfo = new HTMLEditor();
-            Scene profScene = new Scene(profInfo);
-            profInfo.setPrefHeight(245);
-            profInfo.setPrefWidth(245);
-            profInfo.setHtmlText(skills);
-            profPanel.setScene(profScene);
+            skillsInfo = new HTMLEditor();
+            Scene skillsScene = new Scene(skillsInfo);
+            skillsInfo.setPrefHeight(245);
+            skillsInfo.setPrefWidth(245);
+            skillsInfo.setHtmlText(skills);
+            skillsPanel.setScene(skillsScene);
         });
 
         mainPanel.add(panelSkills, "panelProfInfo");
 
         panelAchievements.setLayout(new java.awt.BorderLayout());
-        final JFXPanel awardsPanel = new JFXPanel();
+        final JFXPanel achievePanel = new JFXPanel();
 
-        panelAchievements.add(awardsPanel);
+        panelAchievements.add(achievePanel);
         // Code of sub-components and layout - not shown here
         Platform.runLater(() -> {
-            awardsInfo = new HTMLEditor();
-            Scene awardsScene = new Scene(awardsInfo);
-            awardsInfo.setPrefHeight(245);
-            awardsInfo.setPrefWidth(245);
-            awardsInfo.setHtmlText(achievement);
-            awardsPanel.setScene(awardsScene);
+            achieveInfo = new HTMLEditor();
+            Scene achieveScene = new Scene(achieveInfo);
+            achieveInfo.setPrefHeight(245);
+            achieveInfo.setPrefWidth(245);
+            achieveInfo.setHtmlText(achievement);
+            achievePanel.setScene(achieveScene);
         });
 
         jLabel24.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
@@ -371,55 +372,53 @@ public class MotherFrame extends Variables {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(personalInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(experiencesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pictureButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(biographyInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eduInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(skillsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(achievementsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45)
-                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
+                .addGap(277, 277, 277)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(personalInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
                         .addComponent(First, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Previous, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Last, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91)
-                        .addComponent(Export)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Preview)))
-                .addContainerGap(294, Short.MAX_VALUE))
+                        .addComponent(Previous, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(experiencesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pictureButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(biographyInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(eduInfoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(skillsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(achievementsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Last, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91)
+                .addComponent(Export)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Preview)
+                .addGap(836, 836, 836))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(540, 540, 540)
+                    .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(540, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(personalInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(experiencesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(pictureButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(biographyInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(eduInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(skillsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(achievementsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
+                .addGap(394, 394, 394)
+                .addComponent(personalInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(experiencesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pictureButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(biographyInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(eduInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(skillsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(achievementsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(First, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Previous, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -427,7 +426,12 @@ public class MotherFrame extends Variables {
                     .addComponent(Last)
                     .addComponent(Export)
                     .addComponent(Preview))
-                .addContainerGap())
+                .addGap(381, 381, 381))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(406, 406, 406)
+                    .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(406, Short.MAX_VALUE)))
         );
 
         pack();
@@ -451,13 +455,14 @@ public class MotherFrame extends Variables {
 
         choose.showOpenDialog(null);
 
-        String path = choose.getSelectedFile().getPath();
+        path = choose.getSelectedFile().getPath();
         String filename=choose.getSelectedFile().getName();
         imgExtension = filename.substring(filename.lastIndexOf("."),filename.length());
         imgExtension = imgExtension.replace(".", "");
 
         try {
-            imgString = ImageProcess.toImageString(path);
+            ImageProcess a=new ImageProcess();
+            imgString = a.toImageString(path);
         } catch (IOException ex) {
             Logger.getLogger(MotherFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -503,7 +508,7 @@ public class MotherFrame extends Variables {
         email = emailfield.getText();
         phone = phonefield.getText();
 
-        experience = bioInfo.getHtmlText();
+        experience = expInfo.getHtmlText();
         experience = experience.replace("<html dir=\"ltr\"><head></head>","");
         experience = experience.replace("<body contenteditable=\"true\">","");
         experience = experience.replace("</body></html>","");
@@ -519,20 +524,20 @@ public class MotherFrame extends Variables {
         education = education.replace("<body contenteditable=\"true\">","");
         education = education.replace("</body></html>","");
 
-        skills = profInfo.getHtmlText();
+        skills = skillsInfo.getHtmlText();
         skills = skills.replace("<html dir=\"ltr\"><head></head>","");
         skills = skills.replace("<body contenteditable=\"true\">","");
         skills = skills.replace("</body></html>","");
 
-        achievement = awardsInfo.getHtmlText();
+        achievement = skillsInfo.getHtmlText();
         achievement = achievement.replace("<html dir=\"ltr\"><head></head>","");
         achievement = achievement.replace("<body contenteditable=\"true\">","");
         achievement = achievement.replace("</body></html>","");
 
         EventQueue.invokeLater(() -> {
             try {
-
-                JOptionPane.showMessageDialog(this,HTMLWriter.writeHTML());
+HTMLWriter a =new HTMLWriter();
+                JOptionPane.showMessageDialog(this,a.writeHTML(imgExtension,imgString,name,address,father,mother,bloodg,religion,nationality,phone,email,experience,education,skills,achievement));
             } catch (IOException ex) {
                 Logger.getLogger(MotherFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -541,7 +546,8 @@ public class MotherFrame extends Variables {
 
     private void PreviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PreviewActionPerformed
         // TODO add your handling code here:
-        PreviewPage.mySitePreview();
+        PreviewPage a =new PreviewPage();
+        a.mySitePreview();
     }//GEN-LAST:event_PreviewActionPerformed
 
     private void personalInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalInfoButtonActionPerformed

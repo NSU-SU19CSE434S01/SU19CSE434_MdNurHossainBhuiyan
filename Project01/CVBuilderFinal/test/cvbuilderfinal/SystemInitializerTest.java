@@ -17,6 +17,7 @@ import static org.junit.Assert.*;
  * @author NHBSOHEL
  */
 public class SystemInitializerTest {
+    SystemInitializer instance;
     
     public SystemInitializerTest() {
     }
@@ -31,39 +32,30 @@ public class SystemInitializerTest {
     
     @Before
     public void setUp() {
+        instance=new SystemInitializer();
     }
     
     @After
     public void tearDown() {
+        instance=null;
     }
 
     /**
      * Test of initSystem method, of class SystemInitializer.
-     * 
-     * 
-     * Characteristics:
-     * c1: initiate successful
-     * Blocks:
-     *  b1: True /base
-     *  b2:False
-     * 
-     * 
-     * c2:Initiate failed
-     * Blocks:
-     * d1:True
-     * d2:False  /base
-     * 
-     * Base choice partitioning
-     * {b2,d2} or {b2,d1} or {b1,d2}
-     * 
-     * 
      */
     @Test
     public void testInitSystem() throws Exception {
         System.out.println("initSystem");
-        SystemInitializer.initSystem();
+        //SystemInitializer instance = new SystemInitializer();
+        String r1= instance.initSystem();
+        String r2=instance.setDefaultHTML();
+        String e1="Initiate Successfully";
+        String e2="template generated success";
+        assertEquals(e1, r1);
+        assertEquals(e2, r2);
+       
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

@@ -16,7 +16,7 @@ import org.apache.commons.io.FileUtils;
  *
  * @author NHBSOHEL
  */
-public  class HTMLWriter extends Variables {
+public  class HTMLWriter {
     
     /**
      * Graph partition
@@ -29,10 +29,25 @@ public  class HTMLWriter extends Variables {
      * node:2 //string replace failed
      * node:2 child:2 //error occured
      * 
+     * @param imgExtension
+     * @param imgString
+     * @param name
+     * @param address
+     * @param father
+     * @param mother
+     * @param bloodg
+     * @param religion
+     * @param nationality
+     * @param phone
+     * @param email
+     * @param experience
+     * @param education
+     * @param skills
+     * @param achievement
      * @return
      * @throws IOException 
      */
-     public static String writeHTML() throws IOException{
+     public  String writeHTML(String imgExtension,String imgString,String name,String address,String father,String mother,String bloodg,String religion,String nationality,String phone,String email,String experience,String education,String skills,String achievement) throws IOException{
         File htmlfile = null;
         try {
             
@@ -80,4 +95,8 @@ public  class HTMLWriter extends Variables {
         
         
     }
-}
+
+   // Object writeHTML(String imgExtension, String imgString, String name, String address, String father, String mother, String bloodg, String religion, String nationality, String phone, String email, String experience, String education, String skills, String achievement) {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+

@@ -19,7 +19,8 @@ import org.apache.commons.net.util.Base64;
  *
  * @author NHBSOHEL
  */
-public class ImageProcess {
+public class ImageProcess{
+     BufferedImage bufferedImage = null;
      //Gets File Path & Returns BASE64 String Value
     
         /**
@@ -39,7 +40,7 @@ public class ImageProcess {
      * @return 
      * @throws java.io.FileNotFoundException
      */
-    public static String toImageString(String path) throws FileNotFoundException, IOException {
+    public String toImageString(String path) throws FileNotFoundException, IOException {
     
         String imageString = "";
         try {
@@ -63,11 +64,12 @@ public class ImageProcess {
     
     //Returns A BufferedImage from BASE64 String.
     
-    public  static BufferedImage toBufferedImage() throws IOException {
+    public   BufferedImage toBufferedImage() throws IOException {
         
-        BufferedImage bufferedImage = null;
+       
         try {
-            byte[] byteArray = Base64.decodeBase64(Variables.imgString);
+            Variables a=new Variables();
+            byte[] byteArray = Base64.decodeBase64(a.imgString);
             
             try (InputStream in = new ByteArrayInputStream(byteArray)) {
                 bufferedImage = ImageIO.read(in);

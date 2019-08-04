@@ -16,12 +16,12 @@ import org.apache.commons.io.FileUtils;
  *
  * @author NHBSOHEL
  */
-public abstract class SystemInitializer {
+public  class SystemInitializer {
     //This Class initializes system & creates files with default value ( if none )
     /**
      * @throws IOException
      */
-    public static void initSystem() throws IOException {
+    public  String initSystem() throws IOException {
   
         try {
             FileInputStream fstream;
@@ -32,8 +32,9 @@ public abstract class SystemInitializer {
             setDefaultHTML();
 
         }
+        return "Initiate Successfully";
     }
-    private static void setDefaultHTML() {
+    public  String setDefaultHTML() {
         
         String htmlstr = "<html>\n" +
 "\n" +
@@ -108,6 +109,7 @@ public abstract class SystemInitializer {
                  JOptionPane.showMessageDialog(null,"Can't Create template.html File. Please Check Your Directory Permission");
                 
             }
+        return "template generated success";
     }
     
 }

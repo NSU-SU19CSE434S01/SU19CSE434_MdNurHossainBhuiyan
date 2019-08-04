@@ -17,12 +17,14 @@ import static org.junit.Assert.*;
  * @author NHBSOHEL
  */
 public class PreviewPageTest {
+    PreviewPage instance;
     
     public PreviewPageTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        
     }
     
     @AfterClass
@@ -31,40 +33,26 @@ public class PreviewPageTest {
     
     @Before
     public void setUp() {
+        instance=new PreviewPage();
     }
     
     @After
     public void tearDown() {
+        instance=null;
     }
 
     /**
      * Test of mySitePreview method, of class PreviewPage.
-     * Input space partitioning
-     * 
-     * Characteristics:
-     * c1: preview successful
-     * Blocks:
-     *  b1: True /base
-     *  b2:False
-     * 
-     * 
-     * c2:preview failed
-     * Blocks:
-     * d1:True
-     * d2:False  /base
-     * 
-     * Base choice partitioning
-     * {b2,d2} or {b2,d1} or {b1,d2}
-     * 
-     * 
-     * 
      */
     @Test
     public void testMySitePreview() {
         System.out.println("mySitePreview");
-        PreviewPage.mySitePreview();
+       // PreviewPage instance = new PreviewPage();
+        String result=instance.mySitePreview();
+       String expected="Preview Success";
+        assertEquals(expected, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

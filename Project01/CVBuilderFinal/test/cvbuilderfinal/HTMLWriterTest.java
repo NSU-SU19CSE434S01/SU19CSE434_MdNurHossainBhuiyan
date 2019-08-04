@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  * @author NHBSOHEL
  */
 public class HTMLWriterTest {
-    
+    HTMLWriter instance;
     public HTMLWriterTest() {
     }
     
@@ -31,45 +31,44 @@ public class HTMLWriterTest {
     
     @Before
     public void setUp() {
+    instance=new HTMLWriter();
     }
     
     @After
     public void tearDown() {
+    instance=null;
     }
 
     /**
      * Test of writeHTML method, of class HTMLWriter.
      */
-    
-    /**
-     * Input space partitioning
-     * Characteristics:
-     * c1: File write successful
-     * Blocks:
-     *  b1: True /base
-     *  b2:False
-     * 
-     * 
-     * c2:File write failed
-     * Blocks:
-     * d1:True
-     * d2:False  /base
-     * 
-     * Base choice partitioning
-     * {b2,d2} or {b2,d1} or {b1,d2}
-     * 
-     * 
-     * 
-     * @throws Exception 
-     */
     @Test
-    public void testWriteHTML() throws Exception {     
+    public void testWriteHTML() throws Exception {
+        ImageProcess a =new ImageProcess();
+       // MotherFrame b=new MotherFrame();
+        Variables d=new Variables();
         System.out.println("writeHTML");
-        String expResult = "";
-        String result = HTMLWriter.writeHTML();
+        String imgExtension = d.imgExtension;
+        String imgString =d.imgString;
+        String name = "nur";
+        String address = "Bahsundhara";
+        String father = "Nur Nobi";
+        String mother = "Semona Khatun";
+        String bloodg = "B+";
+        String religion = "Islam";
+        String nationality = "Bangladeshi";
+        String phone = "01818950047";
+        String email = "nhbsohel@gmail.com";
+        String experience = "none";
+        String education = "none";
+        String skills = "none";
+        String achievement = "none";
+        //HTMLWriter instance = new HTMLWriter();
+        String expResult = "HTML Export Successful!!";
+        String result = instance.writeHTML(imgExtension, imgString, name, address, father, mother, bloodg, religion, nationality, phone, email, experience, education, skills, achievement);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

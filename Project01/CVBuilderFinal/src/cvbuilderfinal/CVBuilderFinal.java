@@ -22,8 +22,8 @@ public class CVBuilderFinal {
      * @throws java.text.ParseException
      */
     public static void main(String args[]) throws IOException, FileNotFoundException, ParseException {
-         
-         SystemInitializer.initSystem(); //Initializes the System creates files
+         SystemInitializer a=new SystemInitializer();
+         a.initSystem(); //Initializes the System creates files
          //JSONReader.readData(); //Reades data from JSON file & stores in variables
          
          
