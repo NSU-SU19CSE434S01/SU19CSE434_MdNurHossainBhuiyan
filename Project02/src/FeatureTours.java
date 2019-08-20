@@ -15,6 +15,7 @@ class FeatureTours {
 	void test() {
 		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
 		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
 		
 		// Wait until element to be invisibility
 		  WebDriverWait wait = new WebDriverWait(driver, 10);

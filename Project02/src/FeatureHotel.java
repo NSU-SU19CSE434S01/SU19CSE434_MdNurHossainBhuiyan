@@ -17,6 +17,7 @@ class FeatureHotel {
 	void test() {
 		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
 		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
 		 // Maximize the browser window
 		  driver.manage().window().maximize();
 		  

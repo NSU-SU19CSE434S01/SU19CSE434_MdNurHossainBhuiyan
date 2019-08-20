@@ -17,6 +17,7 @@ class FeatureCar {
 	void test() {
 		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
 		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
 		// Wait until element to be invisibility
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
 		  wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id='top']//div/a[@href='http://phptravels.net/cars/oman/muscat/Toyota-Camry-2015-full-option']")));
