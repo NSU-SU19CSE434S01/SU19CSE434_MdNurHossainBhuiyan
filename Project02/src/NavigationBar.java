@@ -31,7 +31,28 @@ public void isToursPageOpenWhenClickTours(){
 		
 	}
 	
+	// Hotel
 	
+	
+	@Test
+	public void isHotelsPageOpenWhenClickHotels(){
+		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
+		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
+		
+		// Find "Hotels" link
+		WebElement hotels = driver.findElement(By.xpath("//ul[contains(@class, 'navbar-nav')]//a[contains(.,'Hotels')]"));
+		
+		// Click "Hotels" link
+		hotels.click();
+		
+		// Wait until page is loaded
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.titleContains("Hotels Listings"));
+		
+		String expected="Hotels Listings";
+		assertEquals(expected, driver.getTitle());
+	}
 	
 	
 	
