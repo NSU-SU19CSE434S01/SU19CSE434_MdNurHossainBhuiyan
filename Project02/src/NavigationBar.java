@@ -27,6 +27,7 @@ public void isToursPageOpenWhenClickTours(){
 		wait.until(ExpectedConditions.titleContains("Tours Listings"));
 		String expected="Tours Listings";
 		assertEquals(expected, driver.getTitle());
+		driver.quit();
 		// Verify page title
 		
 	}
@@ -52,9 +53,31 @@ public void isToursPageOpenWhenClickTours(){
 		
 		String expected="Hotels Listings";
 		assertEquals(expected, driver.getTitle());
+		driver.quit();
 	}
 	
+	//blog
 	
+	@Test
+	public void isBlogPageOpenWhenClickBlog(){
+		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
+		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
+		
+		// Find "Blog" link
+		WebElement blog = driver.findElement(By.xpath("//ul[contains(@class, 'navbar-nav')]//a[contains(.,'Blog')]"));
+		
+		// Click "Blog" link
+		blog.click();
+		
+		// Wait until page is loaded
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.titleContains("Blog"));
+		String expected="Blog";
+		
+	assertEquals(expected, driver.getTitle());
+	driver.quit();
+	}
 	
 
 }
