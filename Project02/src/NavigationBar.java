@@ -79,6 +79,8 @@ public void isToursPageOpenWhenClickTours(){
 	driver.quit();
 	}
 	
+	
+	//car
 	@Test
 	public void isCarsPageOpenWhenClickCars(){
 		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
@@ -102,7 +104,29 @@ public void isToursPageOpenWhenClickTours(){
 		driver.quit();
 			}
 	
+	@Test
+	public void isOffersPageOpenWhenClickOffers(){
+		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
+		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
+		
+		// Find "Offers" link
+		WebElement offers = driver.findElement(By.xpath("//ul[contains(@class, 'navbar-nav')]//a[contains(.,'Offers')]"));
+		
+		// Click "Offers" link
+		offers.click();
+		
+		// Wait until page is loaded
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.titleContains("Special Offers"));
+		
 	
+		// Verify page title
+				String expected="Special Offers";
+				
+				assertEquals(expected, driver.getTitle());
+				driver.quit();
+			}
 	
 
 }
