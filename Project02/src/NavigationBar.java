@@ -127,6 +127,31 @@ public void isToursPageOpenWhenClickTours(){
 				assertEquals(expected, driver.getTitle());
 				driver.quit();
 			}
+	//flight
+	
+	
+	@Test
+	public void isFlightsPageOpenWhenClickFlights(){
+		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
+		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
+		
+		// Find "Flights" link
+		WebElement flights = driver.findElement(By.xpath("//ul[contains(@class, 'navbar-nav')]//a[contains(.,'Flights')]"));
+		
+		// Click "Flights" link
+		flights.click();
+		
+		// Wait until page is loaded
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.titleContains("Flights"));
+		
+		// Verify page title
+		String expected="Flights";
+		
+		assertEquals(expected, driver.getTitle());
+		driver.quit();
+	}
 	
 
 }
