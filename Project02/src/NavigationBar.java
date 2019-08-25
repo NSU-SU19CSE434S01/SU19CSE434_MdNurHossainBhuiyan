@@ -153,5 +153,38 @@ public void isToursPageOpenWhenClickTours(){
 		driver.quit();
 	}
 	
+	
+	//login page loading test
+	
+	@Test
+	public void isLoginPageOpenWhenClickLoginFromMyAccount(){
+		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
+		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
+		
+		// Find "My Account" dropdown menu
+		WebElement myAccount = driver.findElement(By.xpath("//ul[contains(@class, 'navbar-nav')]//a[contains(.,'My Account')]"));
+		
+		// Click "My Account"
+		myAccount.click();
+		
+		// Find "Login" link
+		WebElement login = driver.findElement(By.xpath("//ul[contains(@class, 'navbar-nav')]//a[contains(.,'Login')]"));
+		
+		// Click "Login" link
+		login.click();
+		
+		// Wait until page is loaded
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.titleContains("Login"));
+		
+		// Verify page title
+	String expected="Login";
+		
+		assertEquals(expected, driver.getTitle());
+		driver.quit();
+		
+	}
+	
 
 }
