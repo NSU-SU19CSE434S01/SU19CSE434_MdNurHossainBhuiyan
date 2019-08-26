@@ -41,23 +41,26 @@ IN this project I tested different feature of the website  https://www.phptravel
 **Description**
 
 From phptravel website I tested different features:
-1.Login
-2.Signup
-3.Homepage Title
-4.Tour page Loading
-5.Car page Loading
-6.Offer page Loading
-7.Hotel page Loading
-8.Feature car click
-9.Feature hotel click
-10.Feature blog click
-11.Feature Toure click
-12.Different Dropdown options
-13.Different Link and Text.
+-Login
+-Signup
+-Search
+-DatePicker
+-Different Button click
+-Homepage Title
+-Tour page Loading
+-Car page Loading
+-Offer page Loading
+-Hotel page Loading
+-Feature car click
+-Feature hotel click
+-Feature blog click
+-Feature Toure click
+-Different Dropdown options
+-Different Link and Text.
 
 **HOW**
 
-To select different part of the website I used Xpath,Classname,Id and Name of the web elements which I get from inspect elements.
+To select different part of the website I used Xpath,Classname,Id and Name of the web elements which I get from inspect elements in web browser.I used eclipse Junit test engine to write test code and Codes are written in java programming language.
 
 
 
@@ -65,6 +68,6 @@ To select different part of the website I used Xpath,Classname,Id and Name of th
 **Packages**
 
 
-1.selenium-java-3.141.59
-2.geckodriver-v0.24.0-win64 (for firefox Browser)
-3.chromedriver_win32 (for chrome Browser)
+-selenium-java-3.141.59
+-geckodriver-v0.24.0-win64 (for firefox Browser)
+-chromedriver_win32 (for chrome Browser)
