@@ -32,7 +32,7 @@
 </div>
 
 
-<div>
+
 ## Introduction:
 
 In this project I tested different feature of the website  https://www.phptravels.net using selenium library. 
@@ -40,23 +40,23 @@ In this project I tested different feature of the website  https://www.phptravel
 
 ## Description
 
-From phptravel website I tested different features:
-**Login**
-**Signup**
-**Search**
-**DatePicker**
-**Different Button click**
-**Homepage Title**
-**Tour page Loading**
-**Car page Loading**
-**Offer page Loading**
-**Hotel page Loading**
-**Feature car click**
-**Feature hotel click**
-**Feature blog click**
-**Feature Toure click**
-**Different Dropdown options**
-**Different Link and Text.**
+From phptravel website I tested different features: <br>
+**Login**<br>
+**Signup**<br>
+**Search**<br>
+**DatePicker**<br>
+**Different Button click**<br>
+**Homepage Title**<br>
+**Tour page Loading**<br>
+**Car page Loading**<br>
+**Offer page Loading**<br>
+**Hotel page Loading**<br>
+**Feature car click**<br>
+**Feature hotel click**<br>
+**Feature blog click**<br>
+**Feature Toure click**<br>
+**Different Dropdown options**<br>
+**Different Link and Text.**<br>
 
 ## HOW
 
@@ -68,7 +68,7 @@ To select different part of the website I used Xpath,Classname,Id and Name of th
 ## Packages 
 
 
-**selenium-java-3.141.59**
-**geckodriver-v0.24.0-win64 (for firefox Browser)**
-**chromedriver_win32 (for chrome Browser)**
+**selenium-java-3.141.59** <br>
+**geckodriver-v0.24.0-win64 (for firefox Browser)** <br>
+**chromedriver_win32 (for chrome Browser)** <br>
 </div>
