@@ -33,41 +33,41 @@
 
 
 
-##Introduction:
+## Introduction:
 
 In this project I tested different feature of the website  https://www.phptravels.net using selenium library. 
 
 
-##Description
+## Description
 
-From phptravel website I tested different features:
-**Login
--Signup
--Search
--DatePicker
--Different Button click
--Homepage Title
--Tour page Loading
--Car page Loading
--Offer page Loading
--Hotel page Loading
--Feature car click
--Feature hotel click
--Feature blog click
--Feature Toure click
--Different Dropdown options
--Different Link and Text.**
+# From phptravel website I tested different features:
+**Login**
+**Signup**
+**Search**
+**DatePicker**
+**Different Button click**
+**Homepage Title**
+**Tour page Loading**
+**Car page Loading**
+**Offer page Loading**
+**Hotel page Loading**
+**Feature car click**
+**Feature hotel click**
+**Feature blog click**
+**Feature Toure click**
+**Different Dropdown options**
+**Different Link and Text.**
 
-**HOW**
+## HOW
 
 To select different part of the website I used Xpath,Classname,Id and Name of the web elements which I get from inspect elements in web browser.I used eclipse Junit test engine to write test code and Codes are written in java programming language.
 
 
 
 
-**Packages**
+## Packages 
 
 
--selenium-java-3.141.59
--geckodriver-v0.24.0-win64 (for firefox Browser)
--chromedriver_win32 (for chrome Browser)
+**selenium-java-3.141.59**
+**geckodriver-v0.24.0-win64 (for firefox Browser)**
+**chromedriver_win32 (for chrome Browser)**
