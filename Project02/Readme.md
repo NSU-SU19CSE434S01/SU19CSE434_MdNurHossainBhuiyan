@@ -32,7 +32,7 @@
 </div>
 
 
-
+<div>
 ## Introduction:
 
 In this project I tested different feature of the website  https://www.phptravels.net using selenium library. 
@@ -40,7 +40,7 @@ In this project I tested different feature of the website  https://www.phptravel
 
 ## Description
 
-# From phptravel website I tested different features:
+From phptravel website I tested different features:
 **Login**
 **Signup**
 **Search**
@@ -71,3 +71,4 @@ To select different part of the website I used Xpath,Classname,Id and Name of th
 **selenium-java-3.141.59**
 **geckodriver-v0.24.0-win64 (for firefox Browser)**
 **chromedriver_win32 (for chrome Browser)**
+</div>
