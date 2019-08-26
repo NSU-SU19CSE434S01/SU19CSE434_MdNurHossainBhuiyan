@@ -184,6 +184,39 @@ public void isToursPageOpenWhenClickTours(){
 		assertEquals(expected, driver.getTitle());
 		driver.quit();
 		
+		
+		//signup page loading
+		
+		
+		@Test
+		public void isSignUpPageOpenWhenClickLoginFromMyAccount(){
+			System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
+			WebDriver driver =new FirefoxDriver();
+			driver.get("http://phptravels.net/");
+			// Find "My Account" dropdown menu
+			WebElement myAccount = driver.findElement(By.xpath("//ul[contains(@class, 'navbar-nav')]//a[contains(.,'My Account')]"));
+			
+			// Click "My Account"
+			myAccount.click();
+			
+			// Find "SignUp" link
+			WebElement signUp = driver.findElement(By.xpath("//ul[contains(@class, 'navbar-nav')]//a[contains(.,'Sign Up')]"));
+			
+			// Click "SignUp" link
+			signUp.click();
+			
+			// Wait until page is loaded
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.titleContains("Register"));
+			String expected="Register";
+			
+			assertEquals(expected, driver.getTitle());
+			driver.quit();
+			
+
+			
+			
+			
 	}
 	
 
