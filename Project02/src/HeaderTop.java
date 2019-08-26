@@ -12,6 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.sun.glass.ui.Screen;
+
+
 class HeaderTop {
 
 	
@@ -47,7 +50,7 @@ class HeaderTop {
 
 	}
 	
-	
+	//dolar
 	@Test
 	public void isUSDollarSelected() {
 		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
@@ -65,6 +68,31 @@ class HeaderTop {
 
 		// Verify if "US Dollar" selected
 		assertEquals(firstSelected.getText(), "US Dollar");
+		driver.quit();
+
+	}
+	
+	
+	//language selection
+	
+	@Test
+	public void selectSpanishLanguage() {
+		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
+		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
+		// Click on dropdown menu
+		driver.findElement(By.xpath("//div[contains(@class, 'header-top')]//a[@class='dropdown-toggle']")).click();
+
+
+		// Wait until page is reloaded
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.urlMatches("http://phptravels.net/es"));
+
+		// Find <a> tag with selected language
+		WebElement languageA = driver.findElement(By.xpath("//div[contains(@class, 'header-top')]//a[@class='dropdown-toggle']"));
+
+		// Verify if "Spanish" language selected
+		assertEquals(languageA.getText(), "Spanish");
 
 	}
 	
