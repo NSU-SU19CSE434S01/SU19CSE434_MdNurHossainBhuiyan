@@ -33,15 +33,15 @@
 
 
 
-**Introduction:**
+##Introduction:
 
-IN this project I tested different feature of the website  https://www.phptravels.net using selenium library. 
+In this project I tested different feature of the website  https://www.phptravels.net using selenium library. 
 
 
-**Description**
+##Description
 
 From phptravel website I tested different features:
--Login
+**Login
 -Signup
 -Search
 -DatePicker
@@ -56,7 +56,7 @@ From phptravel website I tested different features:
 -Feature blog click
 -Feature Toure click
 -Different Dropdown options
--Different Link and Text.
+-Different Link and Text.**
 
 **HOW**
 
