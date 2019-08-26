@@ -20,16 +20,32 @@ class HeaderTop {
 	public void isPhoneNumberCorrect() {
 		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
 		WebDriver driver =new FirefoxDriver();
-		driver.get("http://phptravels.net/tours");
+		driver.get("http://phptravels.net/");
 
 		// Find div with phone number
 		WebElement phoneNumberDIV = driver.findElement(By.xpath("//div[contains(@class,'header-phone')]"));
 	
 		assertEquals(phoneNumberDIV.getText(), "+123-456-789");
 		driver.quit();
-		// Verify if number is correct
+	
 	
 	}
+//email test
+	
+	@Test
+	public void isEmailTextCorrect() {
+		System.setProperty("webdriver.gecko.driver","D:\\fire\\geckodriver.exe");
+		WebDriver driver =new FirefoxDriver();
+		driver.get("http://phptravels.net/");
 
+		// Find div with email
+		WebElement emailDIV = driver.findElement(By.xpath("//div[contains(@class,'header-email')]"));
+
+		// Verify if email text is correct
+		assertEquals(emailDIV.getText(), "info@travelagency.com");
+		driver.quit();
+
+	}
+	
 
 }
