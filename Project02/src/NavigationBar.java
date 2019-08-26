@@ -184,7 +184,7 @@ public void isToursPageOpenWhenClickTours(){
 		assertEquals(expected, driver.getTitle());
 		driver.quit();
 		
-		
+	}
 		//signup page loading
 		
 		
